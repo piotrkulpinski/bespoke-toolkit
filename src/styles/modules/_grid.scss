@@ -12,31 +12,6 @@
       @include grid-container-adaptive($breakpoint, $opts);
     }
   }
-
-  // position: relative;
-  // overflow: hidden;
-  //
-  // &::before {
-  //   content: '';
-  //   position: absolute;
-  //   top: 0;
-  //   height: 100%;
-  //   z-index: -1;
-  //   margin: 0 auto;
-  //   opacity: 0.4;
-  //   pointer-events: none;
-  //
-  //   @each $breakpoint, $opts in $breakpoints {
-  //     @include breakpoint($breakpoint) {
-  //       $gutter: map-get($opts, 'gutter');
-  //       $columns: map-get($opts, 'columns');
-  //
-  //       right: $gutter;
-  //       left: $gutter;
-  //       background-image: linear-gradient(to left, #{grid-gradient-stops($columns, $gutter)});
-  //     }
-  //   }
-  // }
 }
 
 .row {
