@@ -1,0 +1,15 @@
+/*
+** Common - Base
+** -----------------------------------------------------------------------------*/
+
+body {
+  color: $font-color;
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $font-line-height;
+}
+
+a, button {
+  transition-duration: 0.25s;
+  transition-property: color, background-color, border, opacity;
+}

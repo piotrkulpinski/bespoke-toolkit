@@ -1,0 +1,132 @@
+/*
+** Setup - Mixins
+** -----------------------------------------------------------------------------*/
+
+@mixin grid-container {
+  margin-left: auto;
+  margin-right: auto;
+
+  @each $key, $value in $breakpoints {
+    @include breakpoint($key) {
+      padding-left: map-get($value, 'gutter');
+      padding-right: map-get($value, 'gutter');
+    }
+  }
+}
+
+@mixin grid-container-max-width {
+  @each $key, $value in $breakpoints {
+    @include breakpoint($key) {
+      max-width: map-get($value, 'container');
+    }
+  }
+}
+
+@mixin grid-row {
+  display: flex;
+  flex-wrap: wrap;
+
+  @each $key, $value in $breakpoints {
+    @include breakpoint($key) {
+      margin-left: (map-get($value, 'gutter') / -2);
+      margin-right: (map-get($value, 'gutter') / -2);
+    }
+  }
+}
+
+@mixin grid-column {
+  @each $key, $value in $breakpoints {
+    @include breakpoint($key) {
+      width: calc(100% - #{map-get($value, 'gutter')});
+      margin-left: (map-get($value, 'gutter') / 2);
+      margin-right: (map-get($value, 'gutter') / 2);
+    }
+  }
+}
+
+@mixin grid-column-width {
+  @each $key, $value in $breakpoints {
+    @include breakpoint($key) {
+      $columns: map-get($value, 'columns');
+
+      @for $i from 1 through $columns {
+        &_#{$key}-#{$i} {
+          width: calc(#{percentage($i / $columns)} - #{map-get($value, 'gutter')});
+        }
+      }
+    }
+  }
+}
+
+@mixin grid-column-offset {
+  @each $key, $value in $breakpoints {
+    @include breakpoint($key) {
+      $columns: map-get($value, 'columns');
+
+      @for $i from 1 through $columns {
+        &_#{$key}-offset-#{$i} {
+          margin-left: calc(#{percentage($i / $columns)} + #{map-get($value, 'gutter') / 2});
+        }
+      }
+    }
+  }
+}
+
+// Generates a striped background
+@function grid-gradient-stops($columns, $gutter, $color: '#eee') {
+  $transparent: transparent;
+
+  $column-width: percentage(1 / $columns);
+  $gutter: percentage(1 / $columns);
+  $column-offset: $column-width;
+
+  $values: ($transparent 0, $color 0);
+
+  @for $i from 1 to ($columns * 2) {
+    @debug $column-offset;
+
+    @if is-even($i) {
+      $values: append($values, $transparent $column-offset, comma);
+      $values: append($values, $color $column-offset, comma);
+
+      $column-offset: $column-offset + $column-width;
+    } @else {
+      $values: append($values, $color $column-offset, comma);
+      $values: append($values, $transparent $column-offset, comma);
+
+      $column-offset: $column-offset + $gutter;
+    }
+  }
+  @debug;
+  @return $values;
+}
+
+/*
+** Mixin to manage responsive breakpoints
+**
+** @access public
+** @param {String} $label - Breakpoint label
+** @require $breakpoints
+**/
+@mixin breakpoint($label) {
+  $breakpoint: map-get($breakpoints, $label);
+
+  @if $breakpoint {
+    @media (min-width: map-get($breakpoint, 'min-width')) {
+      @content;
+    }
+  }
+
+  @else {
+    @error "Unfortunately, no value could be retrieved from `#{$label}`. "
+    + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@mixin grid-loop {
+  @each $key, $value in map-keys($breakpoints) {
+    @include breakpoint($key) {
+
+    }
+  }
+}

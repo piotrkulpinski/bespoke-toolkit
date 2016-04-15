@@ -1,0 +1,39 @@
+/*
+** Setup - Variables
+** -----------------------------------------------------------------------------*/
+
+// Font definitions
+$font-helvetica:        'Helvetica Neue', 'Arial', Helvetica, sans-serif !default;
+
+$font-color:            #ffffff !default;
+$font-family:           $font-helvetica !default;
+$font-size:             1.6em !default;
+$font-line-height:      1.2 !default;
+
+// Breakpoint definitions
+$breakpoints: (
+  xs: (
+    min-width: 0,
+    container: 480px,
+    gutter: 20px,
+    columns: 2
+  ),
+  sm: (
+    min-width: 490px,
+    container: 480px,
+    gutter: 20px,
+    columns: 4
+  ),
+  md: (
+    min-width: 680px,
+    container: 610px,
+    gutter: 30px,
+    columns: 6
+  ),
+  lg: (
+    min-width: 992px,
+    container: 1040px,
+    gutter: 30px,
+    columns: 12
+  )
+);

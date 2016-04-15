@@ -1,0 +1,45 @@
+/*
+** Common - Layout
+** -----------------------------------------------------------------------------*/
+
+$separator: 30px;
+$colors: #A6E7CF, #DCEEBF, #FFD3B4, #FFAAA3, #FF8A92, #B9E1FF, #B6D3FF, #FFE097, #DBEAC5;
+
+.section {
+  margin-top: $separator;
+  margin-bottom: $separator;
+  overflow: hidden;
+
+  .column {
+    padding-top: ($separator / 2);
+    padding-bottom: ($separator / 2);
+    margin-top: ($separator / 2);
+    margin-bottom: ($separator / 2);
+    color: rgba(#fff, 0.75);
+    font-weight: bold;
+    text-align: center;
+
+    .column {
+      padding-top: 0;
+      padding-bottom: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  @each $color in $colors {
+    $i: index($colors, $color);
+
+    &:nth-of-type(#{$i}) {
+      background: $color;
+
+      .column {
+        background: darken($color, 10%);
+
+        .column {
+          background: rgba(#000, 0.1);
+        }
+      }
+    }
+  }
+}

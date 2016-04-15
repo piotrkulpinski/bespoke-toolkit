@@ -1,0 +1,71 @@
+/*
+** Module - Grid
+** -----------------------------------------------------------------------------*/
+
+.container {
+  position: relative;
+  overflow: hidden;
+  @include grid-container;
+
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 0;
+  //   height: 100%;
+  //   z-index: -1;
+  //   margin: 0 auto;
+  //   opacity: 0.4;
+  //   pointer-events: none;
+  //
+  //   @each $key, $value in $breakpoints {
+  //     @include breakpoint($key) {
+  //       $gutter: map-get($value, 'gutter');
+  //       $columns: map-get($value, 'columns');
+  //
+  //       right: $gutter;
+  //       left: $gutter;
+  //       background-image: linear-gradient(to left, #{grid-gradient-stops($columns, $gutter)});
+  //     }
+  //   }
+  // }
+}
+
+.container_adaptive {
+  @include grid-container-max-width;
+}
+
+.row {
+  @include grid-row;
+}
+
+.column {
+  @include grid-column;
+  @include grid-column-width;
+  @include grid-column-offset;
+}
+
+// Alignment for every column in row
+@each $key, $value in map-keys($breakpoints) {
+  @include breakpoint($key) {
+    .row_#{$key}-top    { align-items: flex-start; }
+    .row_#{$key}-center { align-items: center; }
+    .row_#{$key}-bottom { align-items: flex-end; }
+  }
+}
+
+// Alignment per column
+@each $key, $value in map-keys($breakpoints) {
+  @include breakpoint($key) {
+    .column_#{$key}-top    { align-self: flex-start; }
+    .column_#{$key}-center { align-self: center; }
+    .column_#{$key}-bottom { align-self: flex-end; }
+  }
+}
+
+// Column reordering
+@each $key, $value in map-keys($breakpoints) {
+  @include breakpoint($key) {
+    .column_#{$key}-first { order: -1; }
+    .column_#{$key}-last  { order: 1; }
+  }
+}
