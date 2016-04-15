@@ -3,10 +3,19 @@
 ** -----------------------------------------------------------------------------*/
 
 .container {
-  position: relative;
-  overflow: hidden;
-  @include grid-container;
+  margin-left: auto;
+  margin-right: auto;
 
+  @each $breakpoint, $opts in $breakpoints {
+    @include breakpoint($breakpoint) {
+      @include grid-container($breakpoint, $opts);
+      @include grid-container-adaptive($breakpoint, $opts);
+    }
+  }
+
+  // position: relative;
+  // overflow: hidden;
+  //
   // &::before {
   //   content: '';
   //   position: absolute;
@@ -17,10 +26,10 @@
   //   opacity: 0.4;
   //   pointer-events: none;
   //
-  //   @each $key, $value in $breakpoints {
-  //     @include breakpoint($key) {
-  //       $gutter: map-get($value, 'gutter');
-  //       $columns: map-get($value, 'columns');
+  //   @each $breakpoint, $opts in $breakpoints {
+  //     @include breakpoint($breakpoint) {
+  //       $gutter: map-get($opts, 'gutter');
+  //       $columns: map-get($opts, 'columns');
   //
   //       right: $gutter;
   //       left: $gutter;
@@ -30,42 +39,31 @@
   // }
 }
 
-.container_adaptive {
-  @include grid-container-max-width;
-}
-
 .row {
-  @include grid-row;
+  display: flex;
+  flex-wrap: wrap;
+
+  @each $breakpoint, $opts in $breakpoints {
+    @include breakpoint($breakpoint) {
+      @include grid-row($breakpoint, $opts);
+      @include grid-row-alignment($breakpoint, $opts);
+    }
+  }
 }
 
 .column {
-  @include grid-column;
-  @include grid-column-width;
-  @include grid-column-offset;
-}
-
-// Alignment for every column in row
-@each $key, $value in map-keys($breakpoints) {
-  @include breakpoint($key) {
-    .row_#{$key}-top    { align-items: flex-start; }
-    .row_#{$key}-center { align-items: center; }
-    .row_#{$key}-bottom { align-items: flex-end; }
+  @each $breakpoint, $opts in $breakpoints {
+    @include breakpoint($breakpoint) {
+      @include grid-column($breakpoint, $opts);
+    }
   }
-}
 
-// Alignment per column
-@each $key, $value in map-keys($breakpoints) {
-  @include breakpoint($key) {
-    .column_#{$key}-top    { align-self: flex-start; }
-    .column_#{$key}-center { align-self: center; }
-    .column_#{$key}-bottom { align-self: flex-end; }
-  }
-}
-
-// Column reordering
-@each $key, $value in map-keys($breakpoints) {
-  @include breakpoint($key) {
-    .column_#{$key}-first { order: -1; }
-    .column_#{$key}-last  { order: 1; }
+  @each $breakpoint, $opts in $breakpoints {
+    @include breakpoint($breakpoint) {
+      @include grid-column-width($breakpoint, $opts);
+      @include grid-column-offset($breakpoint, $opts);
+      @include grid-column-alignment($breakpoint, $opts);
+      @include grid-column-order($breakpoint, $opts);
+    }
   }
 }

@@ -7,7 +7,10 @@ var stylesTask = function (gulp, plugins, config, helpers) {
 
     var postcssPlugins = [
       require('postcss-import')(),
-      require('autoprefixer')()
+      require('autoprefixer')({
+        flexbox: false,
+        browsers: ['last 2 versions']
+      })
     ];
 
     var stream = gulp.src(src)

@@ -1,0 +1,69 @@
+/*
+** Mixins - Column
+** -----------------------------------------------------------------------------*/
+
+/*
+** Generate semantic classes for grid column
+**
+** @require {Mixin} breakpoint
+**/
+@mixin grid-column($breakpoint, $opts) {
+  $gutter: map-get($opts, 'gutter');
+
+  width: calc(100% - #{$gutter});
+  margin-left: ($gutter / 2);
+  margin-right: ($gutter / 2);
+}
+
+/*
+** Generate semantic width classes for grid column
+**
+** @require {Mixin} breakpoint
+**/
+@mixin grid-column-width($breakpoint, $opts) {
+  $columns: map-get($opts, 'columns');
+  $gutter: map-get($opts, 'gutter');
+
+  @for $i from 1 through $columns {
+    &_#{$breakpoint}-#{$i} {
+      width: calc(#{percentage($i / $columns)} - #{$gutter});
+    }
+  }
+}
+
+/*
+** Generate semantic offset classes for grid column
+**
+** @require {Mixin} breakpoint
+**/
+@mixin grid-column-offset($breakpoint, $opts) {
+  $columns: map-get($opts, 'columns');
+  $gutter: map-get($opts, 'gutter');
+
+  @for $i from 1 through $columns {
+    &_#{$breakpoint}-offset-#{$i} {
+      margin-left: calc(#{percentage($i / $columns)} + #{$gutter / 2});
+    }
+  }
+}
+
+/*
+** Generate semantic alignment classes for grid column
+**
+** @require {Mixin} breakpoint
+**/
+@mixin grid-column-alignment($breakpoint, $opts) {
+  &_#{$breakpoint}-top    { align-self: flex-start; }
+  &_#{$breakpoint}-center { align-self: center; }
+  &_#{$breakpoint}-bottom { align-self: flex-end; }
+}
+
+/*
+** Generate semantic ordering classes for grid column
+**
+** @require {Mixin} breakpoint
+**/
+@mixin grid-column-order($breakpoint, $opts) {
+  &_#{$breakpoint}-first { order: -1; }
+  &_#{$breakpoint}-last  { order: 1; }
+}

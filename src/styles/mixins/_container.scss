@@ -1,0 +1,28 @@
+/*
+** Mixins - Container
+** -----------------------------------------------------------------------------*/
+
+/*
+** Generate grid container with fluid width
+**
+** @require {Mixin} breakpoint
+**/
+@mixin grid-container($breakpoint, $opts) {
+  $gutter: map-get($opts, 'gutter');
+
+  padding-left: $gutter;
+  padding-right: $gutter;
+}
+
+/*
+** Generate grid container modifier with adaptive width
+**
+** @require {Mixin} breakpoint
+**/
+@mixin grid-container-adaptive($breakpoint, $opts) {
+  $container: map-get($opts, 'container');
+
+  &_adaptive {
+    max-width: $container;
+  }
+}

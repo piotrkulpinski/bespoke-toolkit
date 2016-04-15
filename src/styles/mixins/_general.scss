@@ -1,0 +1,57 @@
+/*
+** Mixins - Container
+** -----------------------------------------------------------------------------*/
+
+/*
+** Manages responsive breakpoints
+**
+** @param {String} $label - Breakpoint label
+** @require {Variable} $breakpoints
+**/
+@mixin breakpoint($label) {
+  $breakpoint: map-get($breakpoints, $label);
+
+  @if $breakpoint {
+    @media (min-width: map-get($breakpoint, 'min-width')) {
+      @content;
+    }
+  }
+
+  @else {
+    @error "Unfortunately, no value could be retrieved from `#{$label}`. "
+    + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+/*
+** Generates gradient stops for visual grid helper
+**
+** @param {Number} $columns - Columns count
+** @param {String} $gutter - Grid gutter width
+** @param {String} $color - Visual grid color (optional)
+**/
+@function grid-gradient-stops($columns, $gutter, $color: '#eee') {
+  $transparent: transparent;
+
+  $column-width: percentage(1 / $columns);
+  $gutter: percentage(1 / $columns);
+  $column-offset: $column-width;
+
+  $values: ($transparent 0, $color 0);
+
+  @for $i from 1 to ($columns * 2) {
+    @if is-even($i) {
+      $values: append($values, $transparent $column-offset, comma);
+      $values: append($values, $color $column-offset, comma);
+
+      $column-offset: $column-offset + $column-width;
+    } @else {
+      $values: append($values, $color $column-offset, comma);
+      $values: append($values, $transparent $column-offset, comma);
+
+      $column-offset: $column-offset + $gutter;
+    }
+  }
+
+  @return $values;
+}
