@@ -7,14 +7,13 @@
   overflow: hidden;
 
   &::before {
-    content: '';
     position: absolute;
     top: 0;
-    height: 100%;
     z-index: -1;
+    height: 100%;
     margin: 0 auto;
-    opacity: 0.4;
     pointer-events: none;
+    content: '';
 
     @each $breakpoint, $opts in $breakpoints {
       @include breakpoint($breakpoint) {

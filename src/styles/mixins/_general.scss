@@ -16,7 +16,6 @@
       @content;
     }
   }
-
   @else {
     @error "Unfortunately, no value could be retrieved from `#{$label}`. "
     + "Available breakpoints are: #{map-keys($breakpoints)}.";
@@ -30,7 +29,7 @@
 ** @param {String} $gutter - Grid gutter width
 ** @param {String} $color - Visual grid color (optional)
 **/
-@function grid-gradient-stops($columns, $gutter, $color: '#eee') {
+@function grid-gradient-stops($columns, $gutter, $color: '#F5FBFF') {
   $column-width: percentage(1 / $columns);
   $gutter: ($gutter / 2);
   $values: (transparent calc(#{$gutter}), $color calc(#{$gutter}));
@@ -39,8 +38,10 @@
     $values: append($values, $color calc(#{($column-width * $i)} - #{$gutter}), comma);
     $values: append($values, transparent calc(#{($column-width * $i)} - #{$gutter}), comma);
 
-    $values: append($values, transparent calc(#{($column-width * $i)} + #{$gutter}), comma);
-    $values: append($values, $color calc(#{($column-width * $i)} + #{$gutter}), comma);
+    @if ($i < $columns) {
+      $values: append($values, transparent calc(#{($column-width * $i)} + #{$gutter}), comma);
+      $values: append($values, $color calc(#{($column-width * $i)} + #{$gutter}), comma);
+    }
   }
 
   @return $values;

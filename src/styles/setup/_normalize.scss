@@ -3,28 +3,28 @@
 ** -----------------------------------------------------------------------------*/
 
 * {
-  margin: 0;
   padding: 0;
-  background-color: transparent;
-  border: 0;
-  color: inherit;
+  margin: 0;
   font-family: inherit;
   font-size: inherit;
   font-style: inherit;
   font-weight: inherit;
   line-height: inherit;
+  color: inherit;
+  background-color: transparent;
+  border: 0;
 }
 
 :root {
-  box-sizing: border-box;
-  font-size: 62.5%;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
   overflow-y: scroll;
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
+  font-size: 62.5%;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
   word-wrap: break-word;
+  box-sizing: border-box;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
 *,
@@ -33,10 +33,12 @@
   box-sizing: inherit;
 }
 
-a, button, [type="button"] {
-  cursor: pointer;
+a,
+button,
+[type="button"] {
   color: currentColor;
   text-decoration: none;
+  cursor: pointer;
 
   &:focus {
     outline: none;
@@ -48,15 +50,16 @@ img {
   max-width: 100%;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
 sub,
 sup {
+  position: relative;
   font-size: 0.75em;
   line-height: 0;
-  position: relative;
   vertical-align: baseline;
 }
 

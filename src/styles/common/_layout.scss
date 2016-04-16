@@ -3,7 +3,7 @@
 ** -----------------------------------------------------------------------------*/
 
 $separator: 30px;
-$colors: #A6E7CF, #DCEEBF, #FFD3B4, #FFAAA3, #FF8A92, #B9E1FF, #B6D3FF, #FFE097, #DBEAC5;
+$colors: #a6e7cf, #dceebf, #ffd3b4, #ffaaa3, #ff8a92, #b9e1ff, #b6d3ff, #ffe097, #dbeac5;
 
 .section {
   margin-top: $separator;
@@ -15,8 +15,8 @@ $colors: #A6E7CF, #DCEEBF, #FFD3B4, #FFAAA3, #FF8A92, #B9E1FF, #B6D3FF, #FFE097,
     padding-bottom: ($separator / 2);
     margin-top: ($separator / 2);
     margin-bottom: ($separator / 2);
-    color: rgba(#fff, 0.75);
     font-weight: bold;
+    color: rgba(#ffffff, 0.75);
     text-align: center;
 
     .column {
@@ -26,19 +26,19 @@ $colors: #A6E7CF, #DCEEBF, #FFD3B4, #FFAAA3, #FF8A92, #B9E1FF, #B6D3FF, #FFE097,
       margin-bottom: 0;
     }
   }
+}
 
-  @each $color in $colors {
-    $i: index($colors, $color);
+@each $color in $colors {
+  $i: index($colors, $color);
 
-    &:nth-of-type(#{$i}) {
-      background: $color;
+  .section:nth-of-type(#{$i}) {
+    background: $color;
+
+    .column {
+      background: darken($color, 10%);
 
       .column {
-        background: darken($color, 10%);
-
-        .column {
-          background: rgba(#000, 0.1);
-        }
+        background: rgba(#000000, 0.1);
       }
     }
   }

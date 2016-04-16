@@ -2,7 +2,7 @@
 
 var stylesTask = function (gulp, plugins, config, helpers) {
   gulp.task('styles', function () {
-    var src = config.paths.src + '/styles/*.scss';
+    var src = config.paths.src + '/styles/**/*.scss';
     var dest = config.paths.dest + '/styles';
 
     var postcssPlugins = [
@@ -15,6 +15,7 @@ var stylesTask = function (gulp, plugins, config, helpers) {
 
     var stream = gulp.src(src)
       .pipe(plugins.plumber(helpers.onError))
+      .pipe(plugins.scssLint())
       .pipe(plugins.cssGlobbing({ extensions: ['.scss', '.css'] }))
       .pipe(plugins.sass({ outputStyle: 'expanded', includePaths: [config.paths.src + '/bower_components'] }))
       .pipe(plugins.postcss(postcssPlugins))
