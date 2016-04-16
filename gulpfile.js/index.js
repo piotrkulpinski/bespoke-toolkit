@@ -31,7 +31,7 @@ gulp.task('build', function () {
  */
 gulp.task('default', function () {
   plugins.browserSync.init({
-    server: './'
+    server: './dist/'
   })
 
   gulp.watch(config.paths.src + '/styles/**/*', ['styles']);

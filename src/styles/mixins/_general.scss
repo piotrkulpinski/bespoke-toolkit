@@ -29,7 +29,7 @@
 ** @param {String} $gutter - Grid gutter width
 ** @param {String} $color - Visual grid color (optional)
 **/
-@function grid-gradient-stops($columns, $gutter, $color: '#F5FBFF') {
+@function grid-gradient-stops($columns, $gutter, $color: '#f5fbff') {
   $column-width: percentage(1 / $columns);
   $gutter: ($gutter / 2);
   $values: (transparent calc(#{$gutter}), $color calc(#{$gutter}));
