@@ -5,7 +5,8 @@
 /*
 ** Generate grid container with fluid width
 **
-** @require {Mixin} breakpoint
+** @param {String} $breakpoint - Breakpoint name
+** @param {Map} $opts - Map containing breakpoint options
 **/
 @mixin grid-container($breakpoint, $opts) {
   $gutter: map-get($opts, 'gutter');
@@ -17,12 +18,14 @@
 /*
 ** Generate grid container modifier with adaptive width
 **
-** @require {Mixin} breakpoint
+** @param {String} $breakpoint - Breakpoint name
+** @param {Map} $opts - Map containing breakpoint options
 **/
 @mixin grid-container-adaptive($breakpoint, $opts) {
   $container: map-get($opts, 'container');
+  $gutter: map-get($opts, 'gutter');
 
   &_adaptive {
-    max-width: $container;
+    max-width: $container + ($gutter * 2);
   }
 }

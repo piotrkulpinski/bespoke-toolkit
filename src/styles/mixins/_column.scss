@@ -5,7 +5,8 @@
 /*
 ** Generate semantic classes for grid column
 **
-** @require {Mixin} breakpoint
+** @param {String} $breakpoint - Breakpoint name
+** @param {Map} $opts - Map containing breakpoint options
 **/
 @mixin grid-column($breakpoint, $opts) {
   $gutter: map-get($opts, 'gutter');
@@ -18,7 +19,8 @@
 /*
 ** Generate semantic width classes for grid column
 **
-** @require {Mixin} breakpoint
+** @param {String} $breakpoint - Breakpoint name
+** @param {Map} $opts - Map containing breakpoint options
 **/
 @mixin grid-column-width($breakpoint, $opts) {
   $columns: map-get($opts, 'columns');
@@ -34,7 +36,8 @@
 /*
 ** Generate semantic offset classes for grid column
 **
-** @require {Mixin} breakpoint
+** @param {String} $breakpoint - Breakpoint name
+** @param {Map} $opts - Map containing breakpoint options
 **/
 @mixin grid-column-offset($breakpoint, $opts) {
   $columns: map-get($opts, 'columns');
@@ -50,7 +53,8 @@
 /*
 ** Generate semantic alignment classes for grid column
 **
-** @require {Mixin} breakpoint
+** @param {String} $breakpoint - Breakpoint name
+** @param {Map} $opts - Map containing breakpoint options
 **/
 @mixin grid-column-alignment($breakpoint, $opts) {
   &_#{$breakpoint}-top    { align-self: flex-start; }
@@ -61,7 +65,8 @@
 /*
 ** Generate semantic ordering classes for grid column
 **
-** @require {Mixin} breakpoint
+** @param {String} $breakpoint - Breakpoint name
+** @param {Map} $opts - Map containing breakpoint options
 **/
 @mixin grid-column-order($breakpoint, $opts) {
   &_#{$breakpoint}-first { order: -1; }

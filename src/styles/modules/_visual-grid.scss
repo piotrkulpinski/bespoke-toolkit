@@ -2,28 +2,32 @@
 ** Module - Visual grid
 ** -----------------------------------------------------------------------------*/
 
-.container {
-  position: relative;
-  overflow: hidden;
+@if $visual-grid == true {
+  .container {
+    position: relative;
+    overflow: hidden;
 
-  &::before {
-    position: absolute;
-    top: 0;
-    z-index: -1;
-    height: 100%;
-    margin: 0 auto;
-    pointer-events: none;
-    content: '';
+    &::before {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      margin: 0 auto;
+      pointer-events: none;
+      content: '';
+      opacity: $visual-grid-opacity;
 
-    @each $breakpoint, $opts in $breakpoints {
-      @include breakpoint($breakpoint) {
-        $gutter: map-get($opts, 'gutter');
-        $columns: map-get($opts, 'columns');
-        $gradient-stops: grid-gradient-stops($columns, $gutter);
+      @if $visual-grid-index == back {
+        z-index: -1;
+      }
 
-        right: ($gutter / 2);
-        left: ($gutter / 2);
-        background-image: linear-gradient(to left, #{$gradient-stops});
+      @else if $visual-grid-index == front {
+        z-index: 1;
+      }
+
+      @each $breakpoint, $opts in $breakpoints {
+        @include breakpoint($breakpoint) {
+          @include visual-grid-gradient($breakpoint, $opts);
+        }
       }
     }
   }

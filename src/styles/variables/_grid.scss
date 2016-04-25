@@ -1,0 +1,35 @@
+/*
+** Variables - Grid
+** -----------------------------------------------------------------------------*/
+
+/*
+** Sets the main responsive breakpoint declarations
+**
+** @type Map
+**/
+$breakpoints: (
+  xs: (
+    min-width: 0,
+    container: 440px,
+    gutter: 20px,
+    columns: 2
+  ),
+  sm: (
+    min-width: 490px,
+    container: 440px,
+    gutter: 20px,
+    columns: 4
+  ),
+  md: (
+    min-width: 680px,
+    container: 550px,
+    gutter: 30px,
+    columns: 6
+  ),
+  lg: (
+    min-width: 992px,
+    container: 980px,
+    gutter: 30px,
+    columns: 12
+  )
+) !default;

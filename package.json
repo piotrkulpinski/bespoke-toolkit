@@ -1,40 +1,55 @@
 {
-  "name": "grid",
-  "description": "grid",
-  "author": "Piotr Kulpinski",
-  "version": "0.0.1",
+  "name": "gridy",
+  "version": "0.1.0",
+  "description": "A lightweight, semantic grid framework built with Flexbox",
+  "keywords": [
+    "grid",
+    "gridy",
+    "columns",
+    "layout",
+    "media",
+    "media-queries",
+    "queries",
+    "flexbox",
+    "sass",
+    "scss",
+    "semantic"
+  ],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/piotrkulpinski/gridy.git"
   },
-  "config": {
-    "paths": {
-      "src": "src",
-      "dest": "dist"
-    }
+  "bugs": {
+    "url": "https://github.com/piotrkulpinski/gridy/issues"
   },
+  "author": {
+    "name": "Piotr Kulpinski",
+    "url": "http://kulpinski.pl"
+  },
+  "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "browser-sync": "^2.11.2",
     "del": "^2.2.0",
     "glob": "^7.0.3",
     "gulp": "^3.9.1",
-    "gulp-css-globbing": "^0.1.8",
-    "gulp-include": "^2.1.0",
-    "gulp-jshint": "^2.0.0",
     "gulp-load-plugins": "^1.2.0",
     "gulp-minify-css": "^1.2.4",
-    "gulp-newer": "^1.1.0",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^6.1.0",
     "gulp-prettify": "^0.4.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.2.0",
     "gulp-scss-lint": "^0.3.9",
-    "gulp-twig": "^0.5.0",
-    "gulp-uglify": "^1.5.3",
-    "jshint": "^2.9.1",
-    "postcss-import": "^8.1.0"
+    "gulp-twig": "^0.5.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "node-sass": "^3.4"
+  },
+  "config": {
+    "paths": {
+      "src": "src",
+      "dest": "dist"
+    }
+  }
 }
