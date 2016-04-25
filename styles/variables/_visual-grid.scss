@@ -1,31 +1,31 @@
-/*
-** Variables - Visual grid
-** -----------------------------------------------------------------------------*/
+//
+// Variables - Visual grid
+// -----------------------------------------------------------------------------
 
-/*
-** Displays the visual grid when set to true. The overlaid grid may be few pixels off depending on the browser's rendering engine and pixel rounding algorithm.
-**
-** @type Bool
-**/
+//
+// Displays the visual grid when set to true. The overlaid grid may be few pixels off depending on the browser's rendering engine and pixel rounding algorithm.
+//
+// @type Bool
+//
 $visual-grid: false !default;
 
-/*
-** Sets the visual grid color.
-**
-** @type Color
-**/
+//
+// Sets the visual grid color.
+//
+// @type Color
+//
 $visual-grid-color: #eeeeee !default;
 
-/*
-** Sets the `z-index` property of the visual grid. Can be `back` (behind content) or `front` (in front of content).
-**
-** @type String
-**/
+//
+// Sets the `z-index` property of the visual grid. Can be `back` (behind content) or `front` (in front of content).
+//
+// @type String
+//
 $visual-grid-index: back !default;
 
-/*
-** Sets the opacity property of the visual grid.
-**
-** @type Number (unitless)
-**/
+//
+// Sets the opacity property of the visual grid.
+//
+// @type Number (unitless)
+//
 $visual-grid-opacity: 0.5 !default;

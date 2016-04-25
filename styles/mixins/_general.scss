@@ -1,13 +1,13 @@
-/*
-** Mixins - General
-** -----------------------------------------------------------------------------*/
+//
+// Mixins - General
+// -----------------------------------------------------------------------------
 
-/*
-** Manages responsive breakpoints
-**
-** @param {String} $label - Breakpoint label
-** @require {Variable} $breakpoints
-**/
+//
+// Manages responsive breakpoints
+//
+// @param {String} $label - Breakpoint label
+// @require {Variable} $breakpoints
+//
 @mixin breakpoint($label) {
   $breakpoint: map-get($breakpoints, $label);
 
