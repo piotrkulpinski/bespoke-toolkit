@@ -2,12 +2,11 @@
 // Mixins - Column
 // -----------------------------------------------------------------------------
 
-//
 // Generate semantic classes for grid column
 //
 // @param {String} $breakpoint - Breakpoint name
-// @param {Map} $opts - Map containing breakpoint options
-//
+// @param {Map}    $opts - Map containing breakpoint options
+
 @mixin grid-column($breakpoint, $opts) {
   $gutter: map-get($opts, 'gutter');
 
@@ -16,12 +15,11 @@
   margin-right: ($gutter / 2);
 }
 
-//
 // Generate semantic width classes for grid column
 //
 // @param {String} $breakpoint - Breakpoint name
-// @param {Map} $opts - Map containing breakpoint options
-//
+// @param {Map}    $opts - Map containing breakpoint options
+
 @mixin grid-column-width($breakpoint, $opts) {
   $columns: map-get($opts, 'columns');
   $gutter: map-get($opts, 'gutter');
@@ -33,12 +31,11 @@
   }
 }
 
-//
 // Generate semantic offset classes for grid column
 //
 // @param {String} $breakpoint - Breakpoint name
-// @param {Map} $opts - Map containing breakpoint options
-//
+// @param {Map}    $opts - Map containing breakpoint options
+
 @mixin grid-column-offset($breakpoint, $opts) {
   $columns: map-get($opts, 'columns');
   $gutter: map-get($opts, 'gutter');
@@ -50,24 +47,22 @@
   }
 }
 
-//
 // Generate semantic alignment classes for grid column
 //
 // @param {String} $breakpoint - Breakpoint name
-// @param {Map} $opts - Map containing breakpoint options
-//
+// @param {Map}    $opts - Map containing breakpoint options
+
 @mixin grid-column-alignment($breakpoint, $opts) {
   &_#{$breakpoint}-top    { align-self: flex-start; }
   &_#{$breakpoint}-center { align-self: center; }
   &_#{$breakpoint}-bottom { align-self: flex-end; }
 }
 
-//
 // Generate semantic ordering classes for grid column
 //
 // @param {String} $breakpoint - Breakpoint name
-// @param {Map} $opts - Map containing breakpoint options
-//
+// @param {Map}    $opts - Map containing breakpoint options
+
 @mixin grid-column-order($breakpoint, $opts) {
   &_#{$breakpoint}-first { order: -1; }
   &_#{$breakpoint}-last  { order: 1; }

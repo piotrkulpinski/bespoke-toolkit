@@ -2,12 +2,11 @@
 // Mixins - Row
 // -----------------------------------------------------------------------------
 
-//
 // Generate grid row
 //
 // @param {String} $breakpoint - Breakpoint name
-// @param {Map} $opts - Map containing breakpoint options
-//
+// @param {Map}    $opts - Map containing breakpoint options
+
 @mixin grid-row($breakpoint, $opts) {
   $gutter: map-get($opts, 'gutter');
 
@@ -15,12 +14,11 @@
   margin-right: ($gutter / -2);
 }
 
-//
 // Generate semantic alignment classes for grid row
 //
 // @param {String} $breakpoint - Breakpoint name
-// @param {Map} $opts - Map containing breakpoint options
-//
+// @param {Map}    $opts - Map containing breakpoint options
+
 @mixin grid-row-alignment($breakpoint, $opts) {
   &_#{$breakpoint}-top    { align-items: flex-start; }
   &_#{$breakpoint}-center { align-items: center; }
