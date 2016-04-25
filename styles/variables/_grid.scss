@@ -6,7 +6,7 @@
 ///
 /// @type Map
 
-$breakpoints: (
+$grid-breakpoints: if(variable-exists(breakpoints), $breakpoints, (
   xs: (
     min-width: 0,
     container: 440px,
@@ -31,4 +31,4 @@ $breakpoints: (
     gutter: 30px,
     columns: 12
   )
-) !default;
+));

@@ -6,7 +6,7 @@
   margin-right: auto;
   margin-left: auto;
 
-  @each $breakpoint, $opts in $breakpoints {
+  @each $breakpoint, $opts in $grid-breakpoints {
     @include breakpoint($breakpoint) {
       @include grid-container($breakpoint, $opts);
       @include grid-container-adaptive($breakpoint, $opts);
@@ -18,7 +18,7 @@
   display: flex;
   flex-wrap: wrap;
 
-  @each $breakpoint, $opts in $breakpoints {
+  @each $breakpoint, $opts in $grid-breakpoints {
     @include breakpoint($breakpoint) {
       @include grid-row($breakpoint, $opts);
       @include grid-row-alignment($breakpoint, $opts);
@@ -27,13 +27,13 @@
 }
 
 .column {
-  @each $breakpoint, $opts in $breakpoints {
+  @each $breakpoint, $opts in $grid-breakpoints {
     @include breakpoint($breakpoint) {
       @include grid-column($breakpoint, $opts);
     }
   }
 
-  @each $breakpoint, $opts in $breakpoints {
+  @each $breakpoint, $opts in $grid-breakpoints {
     @include breakpoint($breakpoint) {
       @include grid-column-width($breakpoint, $opts);
       @include grid-column-offset($breakpoint, $opts);

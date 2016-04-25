@@ -1,5 +1,6 @@
 /*!
-** Project:   Flexgridy v0.1.0
+** Name:      Flexgridy
+** Version:   v0.1.0
 ** Author:    Piotr Kulpinski
 ** Copyright: 2016
 ** License:   MIT
@@ -14,7 +15,7 @@
   .container {
     padding-left: 20px;
     padding-right: 20px;
-    max-width: 480px;
+    max-width: calc(440px + 40px);
   }
 }
 
@@ -22,7 +23,7 @@
   .container {
     padding-left: 20px;
     padding-right: 20px;
-    max-width: 480px;
+    max-width: calc(440px + 40px);
   }
 }
 
@@ -30,7 +31,7 @@
   .container {
     padding-left: 30px;
     padding-right: 30px;
-    max-width: 670px;
+    max-width: calc(610px + 60px);
   }
 }
 
@@ -38,7 +39,7 @@
   .container {
     padding-left: 30px;
     padding-right: 30px;
-    max-width: 1040px;
+    max-width: calc(980px + 60px);
   }
 }
 

@@ -7,16 +7,42 @@
 **/
 
 // Font definitions
-$font-color:            #ffffff;
-$font-family:           'Helvetica Neue', 'Arial', Helvetica, sans-serif;
-$font-size:             1.6em;
-$font-line-height:      1.2;
+$font-color: #ffffff;
+$font-family: 'Helvetica Neue', 'Arial', Helvetica, sans-serif;
+$font-size: 1.6em;
+$font-line-height: 1.2;
 
-$separator:             30px;
-$colors:                #a6e7cf, #dceebf, #ffd3b4, #ffaaa3, #ff8a92, #b9e1ff, #b6d3ff, #ffe097, #dbeac5;
+$separator: 30px;
+$colors: #a6e7cf, #dceebf, #ffd3b4, #ffaaa3, #ff8a92, #b9e1ff, #b6d3ff, #ffe097, #dbeac5;
 
 // Flexgridy settings
-$visual-grid:           true;
+$visual-grid: true;
+$breakpoints: (
+  xs: (
+    min-width: 0,
+    container: 440px,
+    gutter: 20px,
+    columns: 2
+  ),
+  sm: (
+    min-width: 480px,
+    container: 440px,
+    gutter: 20px,
+    columns: 4
+  ),
+  md: (
+    min-width: 680px,
+    container: 620px,
+    gutter: 30px,
+    columns: 6
+  ),
+  lg: (
+    min-width: 1040px,
+    container: 980px,
+    gutter: 30px,
+    columns: 12
+  )
+);
 
 @import '../styles/flexgridy';
 

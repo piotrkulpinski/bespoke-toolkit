@@ -24,7 +24,7 @@
         z-index: 1;
       }
 
-      @each $breakpoint, $opts in $breakpoints {
+      @each $breakpoint, $opts in $grid-breakpoints {
         @include breakpoint($breakpoint) {
           @include visual-grid-gradient($breakpoint, $opts);
         }

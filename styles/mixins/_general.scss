@@ -5,10 +5,10 @@
 /// Manages responsive breakpoints
 ///
 /// @param {String}     $label - Breakpoint label
-/// @require {Variable} $breakpoints
+/// @require {Variable} $grid-breakpoints
 
 @mixin breakpoint($label) {
-  $breakpoint: map-get($breakpoints, $label);
+  $breakpoint: map-get($grid-breakpoints, $label);
 
   @if $breakpoint {
     @media (min-width: map-get($breakpoint, 'min-width')) {
@@ -17,6 +17,6 @@
   }
   @else {
     @error "Unfortunately, no value could be retrieved from `#{$label}`. "
-    + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    + "Available breakpoints are: #{map-keys($grid-breakpoints)}.";
   }
 }
