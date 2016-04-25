@@ -1,0 +1,28 @@
+{
+  "name": "gridy",
+  "description": "A lightweight, semantic grid framework built with Flexbox",
+  "version": "0.1.0",
+  "license": "MIT",
+  "keywords": [
+    "grid",
+    "gridy",
+    "columns",
+    "layout",
+    "media",
+    "media-queries",
+    "queries",
+    "flexbox",
+    "sass",
+    "scss",
+    "semantic"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/piotrkulpinski/gridy.git"
+  },
+  "main": "styles/_gridy.scss",
+  "authors": [
+    "Piotr Kulpinski (http://kulpinski.pl)"
+  ],
+  "dependencies": {}
+}

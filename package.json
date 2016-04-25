@@ -1,7 +1,8 @@
 {
   "name": "gridy",
-  "version": "0.1.0",
   "description": "A lightweight, semantic grid framework built with Flexbox",
+  "version": "0.1.0",
+  "license": "MIT",
   "keywords": [
     "grid",
     "gridy",
@@ -26,7 +27,6 @@
     "name": "Piotr Kulpinski",
     "url": "http://kulpinski.pl"
   },
-  "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "browser-sync": "^2.11.2",
