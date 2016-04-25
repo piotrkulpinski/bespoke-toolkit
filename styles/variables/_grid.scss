@@ -15,19 +15,19 @@ $breakpoints: (
     columns: 2
   ),
   sm: (
-    min-width: 490px,
+    min-width: 480px,
     container: 440px,
     gutter: 20px,
     columns: 4
   ),
   md: (
     min-width: 680px,
-    container: 550px,
+    container: 610px,
     gutter: 30px,
     columns: 6
   ),
   lg: (
-    min-width: 992px,
+    min-width: 1040px,
     container: 980px,
     gutter: 30px,
     columns: 12

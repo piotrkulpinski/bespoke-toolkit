@@ -1,0 +1,93 @@
+/*!
+** Project:   Gridy v0.1.0
+** Author:    Piotr Kulpinski
+** Copyright: 2016
+** License:   MIT
+** --------------------------------
+**/
+
+// Font definitions
+$font-color:            #ffffff;
+$font-family:           'Helvetica Neue', 'Arial', Helvetica, sans-serif;
+$font-size:             1.6em;
+$font-line-height:      1.2;
+
+$separator:             30px;
+$colors:                #a6e7cf, #dceebf, #ffd3b4, #ffaaa3, #ff8a92, #b9e1ff, #b6d3ff, #ffe097, #dbeac5;
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: transparent;
+  border: 0;
+}
+
+:root {
+  overflow-y: scroll;
+  font-size: 62.5%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+  word-wrap: break-word;
+  box-sizing: border-box;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $font-line-height;
+  color: $font-color;
+}
+
+.section {
+  margin-top: $separator;
+  margin-bottom: $separator;
+  overflow: hidden;
+
+  .column {
+    padding-top: ($separator / 2);
+    padding-bottom: ($separator / 2);
+    margin-top: ($separator / 2);
+    margin-bottom: ($separator / 2);
+    font-weight: bold;
+    color: rgba(#ffffff, 0.75);
+    text-align: center;
+
+    .column {
+      padding-top: 0;
+      padding-bottom: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+@each $color in $colors {
+  $i: index($colors, $color);
+
+  .section:nth-of-type(#{$i}) {
+    background: $color;
+
+    .column {
+      background: darken($color, 10%);
+
+      .column {
+        background: rgba(#000000, 0.1);
+      }
+    }
+  }
+}
