@@ -2,11 +2,11 @@
 // Mixins - Visual grid
 // -----------------------------------------------------------------------------
 
-// Generate grid row
-//
-// @param {String}     $breakpoint - Breakpoint name
-// @param {Map}        $opts - Map containing breakpoint options
-// @require {Variable} $visual-grid-color
+/// Generate grid row
+///
+/// @param {String}     $breakpoint - Breakpoint name
+/// @param {Map}        $opts - Map containing breakpoint options
+/// @require {Variable} $visual-grid-color
 
 @mixin visual-grid-gradient($breakpoint, $opts) {
   $gutter: map-get($opts, 'gutter');
@@ -18,11 +18,11 @@
   background-image: linear-gradient(to left, #{$gradient-stops});
 }
 
-// Generates gradient stops for visual grid helper
-//
-// @param {Number} $columns - Columns count
-// @param {String} $gutter - Grid gutter width
-// @param {String} $color - Visual grid color (optional)
+/// Generates gradient stops for visual grid helper
+///
+/// @param {Number} $columns - Columns count
+/// @param {String} $gutter - Grid gutter width
+/// @param {String} $color - Visual grid color (optional)
 
 @function visual-grid-stops($columns, $gutter, $color) {
   $column-width: percentage(1 / $columns);
