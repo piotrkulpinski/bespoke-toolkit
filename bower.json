@@ -20,7 +20,7 @@
     "type": "git",
     "url": "https://github.com/piotrkulpinski/flexgridy.git"
   },
-  "main": "styles/_flexgridy.scss",
+  "main": "styles/flexgridy.scss",
   "authors": [
     "Piotr Kulpinski (http://kulpinski.pl)"
   ],

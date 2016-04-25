@@ -25,7 +25,5 @@
   $container: map-get($opts, 'container');
   $gutter: map-get($opts, 'gutter');
 
-  &_adaptive {
-    max-width: $container + ($gutter * 2);
-  }
+  max-width: $container + ($gutter * 2);
 }

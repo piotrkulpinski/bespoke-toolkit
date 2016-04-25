@@ -14,8 +14,6 @@
   .container {
     padding-left: 20px;
     padding-right: 20px;
-  }
-  .container_adaptive {
     max-width: 480px;
   }
 }
@@ -24,8 +22,6 @@
   .container {
     padding-left: 20px;
     padding-right: 20px;
-  }
-  .container_adaptive {
     max-width: 480px;
   }
 }
@@ -34,8 +30,6 @@
   .container {
     padding-left: 30px;
     padding-right: 30px;
-  }
-  .container_adaptive {
     max-width: 670px;
   }
 }
@@ -44,8 +38,6 @@
   .container {
     padding-left: 30px;
     padding-right: 30px;
-  }
-  .container_adaptive {
     max-width: 1040px;
   }
 }
