@@ -1,5 +1,5 @@
 /*!
-** Project:   Gridy v0.1.0
+** Project:   Flexgridy v0.1.0
 ** Author:    Piotr Kulpinski
 ** Copyright: 2016
 ** License:   MIT
@@ -15,10 +15,10 @@ $font-line-height:      1.2;
 $separator:             30px;
 $colors:                #a6e7cf, #dceebf, #ffd3b4, #ffaaa3, #ff8a92, #b9e1ff, #b6d3ff, #ffe097, #dbeac5;
 
-// Gridy settings
+// Flexgridy settings
 $visual-grid:           true;
 
-@import '../styles/gridy';
+@import '../styles/flexgridy';
 
 * {
   padding: 0;
