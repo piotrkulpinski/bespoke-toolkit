@@ -6,9 +6,10 @@
 ///
 /// @param {String} $breakpoint - Breakpoint name
 /// @param {Map}    $opts - Map containing breakpoint options
+/// @require {Variable} $grid-container-gutter
 
 @mixin grid-container($breakpoint, $opts) {
-  $gutter: map-get($opts, 'gutter');
+  $gutter: $grid-container-gutter;
 
   padding-left: $gutter;
   padding-right: $gutter;
@@ -18,10 +19,11 @@
 ///
 /// @param {String} $breakpoint - Breakpoint name
 /// @param {Map}    $opts - Map containing breakpoint options
+/// @require {Variable} $grid-container-gutter
 
 @mixin grid-container-adaptive($breakpoint, $opts) {
   $container: map-get($opts, 'container');
-  $gutter: map-get($opts, 'gutter');
+  $gutter: $grid-container-gutter;
 
   max-width: calc(#{$container} + #{($gutter * 2)});
 }

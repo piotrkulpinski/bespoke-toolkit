@@ -110,7 +110,7 @@ body {
 @each $color in $colors {
   $i: index($colors, $color);
 
-  .section:nth-of-type(#{$i}) {
+  .section:nth-of-type(#{$i}n) {
     background: $color;
 
     .column {

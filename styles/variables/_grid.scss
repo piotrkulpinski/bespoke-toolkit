@@ -2,6 +2,12 @@
 // Variables - Grid
 // -----------------------------------------------------------------------------
 
+/// Sets the grid container side gutters
+///
+/// @type Number (pixels)
+
+$grid-container-gutter: 20px;
+
 /// Sets the main responsive breakpoint declarations
 ///
 /// @type Map
