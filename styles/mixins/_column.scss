@@ -40,7 +40,7 @@
   $columns: map-get($opts, 'columns');
   $gutter: map-get($opts, 'gutter');
 
-  @for $i from 1 through $columns {
+  @for $i from 0 through $columns {
     &_#{$breakpoint}-offset-#{$i} {
       margin-left: calc(#{percentage($i / $columns)} + #{$gutter / 2});
     }

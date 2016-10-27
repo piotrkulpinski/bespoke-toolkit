@@ -251,6 +251,9 @@
   .column_xs-2 {
     width: calc(100% - 20px);
   }
+  .column_xs-offset-0 {
+    margin-left: calc(0% + 10px);
+  }
   .column_xs-offset-1 {
     margin-left: calc(50% + 10px);
   }
@@ -296,6 +299,9 @@
   }
   .column_sm-4 {
     width: calc(100% - 20px);
+  }
+  .column_sm-offset-0 {
+    margin-left: calc(0% + 10px);
   }
   .column_sm-offset-1 {
     margin-left: calc(25% + 10px);
@@ -354,6 +360,9 @@
   }
   .column_md-6 {
     width: calc(100% - 30px);
+  }
+  .column_md-offset-0 {
+    margin-left: calc(0% + 15px);
   }
   .column_md-offset-1 {
     margin-left: calc(16.66667% + 15px);
@@ -436,6 +445,9 @@
   }
   .column_lg-12 {
     width: calc(100% - 30px);
+  }
+  .column_lg-offset-0 {
+    margin-left: calc(0% + 15px);
   }
   .column_lg-offset-1 {
     margin-left: calc(8.33333% + 15px);

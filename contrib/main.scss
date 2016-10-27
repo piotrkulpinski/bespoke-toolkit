@@ -17,6 +17,8 @@ $colors: #a6e7cf, #dceebf, #ffd3b4, #ffaaa3, #ff8a92, #b9e1ff, #b6d3ff, #ffe097,
 
 // Flexgridy settings
 $visual-grid: true;
+$visual-grid-color: red;
+$grid-container-gutter: 10px;
 $breakpoints: (
   xs: (
     min-width: 0,
@@ -39,7 +41,7 @@ $breakpoints: (
   lg: (
     min-width: 1040px,
     container: 980px,
-    gutter: 30px,
+    gutter: 10px,
     columns: 12
   )
 );
