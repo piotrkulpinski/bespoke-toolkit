@@ -25,5 +25,7 @@
   $container: map-get($opts, 'container');
   $gutter: $grid-container-gutter;
 
-  max-width: calc(#{$container} + #{($gutter * 2)});
+  @if ($container) {
+    max-width: calc(#{$container} + #{($gutter * 2)});
+  }
 }

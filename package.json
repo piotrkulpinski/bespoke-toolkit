@@ -1,7 +1,7 @@
 {
   "name": "flexgridy",
   "description": "A lightweight, semantic grid framework built with Flexbox",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "license": "MIT",
   "keywords": [
     "grid",
@@ -36,9 +36,7 @@
     "gulp-postcss": "^6.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.2.0",
-    "gulp-scss-lint": "^0.3.9"
-  },
-  "dependencies": {
-    "node-sass": "^3.4"
+    "gulp-scss-lint": "^0.3.9",
+    "node-sass": "^4.5"
   }
 }
