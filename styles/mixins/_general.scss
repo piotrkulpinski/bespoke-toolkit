@@ -15,6 +15,7 @@
       @content;
     }
   }
+
   @else {
     @error "Unfortunately, no value could be retrieved from `#{$label}`. "
     + "Available breakpoints are: #{map-keys($grid-breakpoints)}.";

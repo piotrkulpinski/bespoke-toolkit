@@ -1,23 +1,24 @@
 /*!
-** Project:   Flexgridy v0.1.0
+** Name:      Bespoke Toolkit
+** Version:   v0.2.0
 ** Author:    Piotr Kulpinski
-** Copyright: 2016
+** Copyright: 2017
 ** License:   MIT
 ** --------------------------------
 **/
 
 // Font definitions
-$font-color: #ffffff;
+$font-color: #000000;
 $font-family: 'Helvetica Neue', 'Arial', Helvetica, sans-serif;
 $font-size: 1.6em;
 $font-line-height: 1.2;
 
 $separator: 30px;
-$colors: #a6e7cf, #dceebf, #ffd3b4, #ffaaa3, #ff8a92, #b9e1ff, #b6d3ff, #ffe097, #dbeac5;
+$colors: #A6E7CF, #DCEEBF, #FFD3B4, #FFAAA3, #FF8A92, #B9E1FF, #B6D3FF, #FFE097, #DBEAC5;
 
 // Flexgridy settings
 $visual-grid: true;
-$visual-grid-color: red;
+$visual-grid-color: #FF0000;
 $grid-container-gutter: 10px;
 $breakpoints: (
   xs: (
@@ -46,7 +47,7 @@ $breakpoints: (
   )
 );
 
-@import '../styles/flexgridy';
+@import '../styles/toolkit';
 
 * {
   padding: 0;
@@ -86,6 +87,11 @@ body {
   color: $font-color;
 }
 
+h1 {
+  margin-top: $separator;
+  margin-bottom: $separator;
+}
+
 .section {
   margin-top: $separator;
   margin-bottom: $separator;
@@ -97,7 +103,7 @@ body {
     margin-top: ($separator / 2);
     margin-bottom: ($separator / 2);
     font-weight: bold;
-    color: rgba(#ffffff, 0.75);
+    color: rgba(#FFFFFF, 0.75);
     text-align: center;
 
     .column {

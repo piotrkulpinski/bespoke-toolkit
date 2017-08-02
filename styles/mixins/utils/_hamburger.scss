@@ -1,0 +1,78 @@
+//
+// Mixins - Utils / Hamburger
+// -----------------------------------------------------------------------------
+
+@mixin hamburger($width, $height, $weight, $color, $duration, $active-class) {
+  display: block;
+  position: relative;
+  width: $width;
+  height: $height;
+  cursor: pointer;
+
+  > * {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75%;
+    display: block;
+    height: $weight;
+    background-color: $color;
+    transform: translate3d(-50%, -50%, 0);
+
+    @if ($active-class) {
+      transition-property: background-color;
+      transition-delay: $duration;
+
+      .#{$active-class} & {
+        background-color: transparent;
+      }
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: $color;
+
+      @if ($active-class) {
+        transition-delay: $duration, 0s, 0s;
+        transition-duration: $duration, $duration, $duration;
+
+        .#{$active-class} & {
+          // background-color: $color-white;
+          transition-delay: 0s, $duration;
+        }
+      }
+    }
+
+    &::before {
+      top: -9px;
+
+      @if ($active-class) {
+        transition-property: top, transform, background-color;
+
+        .#{$active-class} & {
+          top: 0;
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    &::after {
+      bottom: -9px;
+
+      @if ($active-class) {
+        transition-property: bottom, transform, background-color;
+
+        .#{$active-class} & {
+          bottom: 0;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}

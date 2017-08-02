@@ -1,2 +1,2 @@
-A lightweight, semantic grid framework built with Flexbox
+A lightweight, semantic set of CSS utilities
 ------------------

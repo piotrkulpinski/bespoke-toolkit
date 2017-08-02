@@ -1,11 +1,11 @@
 {
-  "name": "flexgridy",
-  "description": "A lightweight, semantic grid framework built with Flexbox",
-  "version": "0.1.1",
+  "name": "bespoke-toolkit",
+  "description": "A lightweight, semantic set of CSS utilities",
+  "version": "0.2.0",
   "license": "MIT",
   "keywords": [
     "grid",
-    "flexgridy",
+    "bespoke-toolkit",
     "columns",
     "layout",
     "media",
@@ -18,11 +18,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/piotrkulpinski/flexgridy.git"
+    "url": "https://github.com/piotrkulpinski/bespoke-toolkit.git"
   },
-  "main": "styles/flexgridy.scss",
+  "main": "styles/toolkit.scss",
   "authors": [
-    "Piotr Kulpinski (http://kulpinski.pl)"
+    "Piotr Kulpinski (http://kulpinski.co)"
   ],
   "dependencies": {}
 }

@@ -2,6 +2,12 @@
 // Module - Grid
 // -----------------------------------------------------------------------------
 
+@import '../variables/grid';
+@import '../mixins/general';
+@import '../mixins/grid/container';
+@import '../mixins/grid/row';
+@import '../mixins/grid/column';
+
 .container {
   margin-right: auto;
   margin-left: auto;

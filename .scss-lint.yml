@@ -61,7 +61,7 @@ linters:
 
   HexNotation:
     enabled: true
-    style: lowercase
+    style: uppercase
 
   HexValidation:
     enabled: true
@@ -108,7 +108,7 @@ linters:
     enabled: false
 
   PropertySortOrder:
-    enabled: true
+    enabled: false
     ignore_unspecified: false
     min_properties: 2
     separate_groups: false

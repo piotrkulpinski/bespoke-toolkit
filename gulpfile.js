@@ -65,3 +65,8 @@ gulp.task('default', function () {
   gulp.watch(paths.styles, ['styles', 'contribStyles']);
   gulp.watch('./contrib/*.html', browserSync.reload);
 });
+
+/**
+** Build task
+**/
+gulp.task('build', ['styles', 'contribStyles']);
