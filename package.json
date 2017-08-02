@@ -1,11 +1,11 @@
 {
-  "name": "baskpoke-toolkit",
+  "name": "bespoke-toolkit",
   "description": "A lightweight, semantic set of CSS utilities",
   "version": "0.2.0",
   "license": "MIT",
   "keywords": [
     "grid",
-    "baskpoke-toolkit",
+    "bespoke-toolkit",
     "columns",
     "layout",
     "media",
@@ -18,10 +18,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/piotrkulpinski/baskpoke-toolkit.git"
+    "url": "https://github.com/piotrkulpinski/bespoke-toolkit.git"
   },
   "bugs": {
-    "url": "https://github.com/piotrkulpinski/baskpoke-toolkit/issues"
+    "url": "https://github.com/piotrkulpinski/bespoke-toolkit/issues"
   },
   "author": {
     "name": "Piotr Kulpinski",

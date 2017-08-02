@@ -2,7 +2,7 @@
 // Mixins - Utils / Hamburger
 // -----------------------------------------------------------------------------
 
-@mixin hamburger($width, $height, $weight, $color, $duration, $active-class) {
+@mixin u-hamburger($width, $height, $weight, $color, $duration: 0, $active-class: '') {
   display: block;
   position: relative;
   width: $width;
@@ -13,7 +13,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 75%;
+    width: 65%;
     display: block;
     height: $weight;
     background-color: $color;
@@ -43,14 +43,13 @@
         transition-duration: $duration, $duration, $duration;
 
         .#{$active-class} & {
-          // background-color: $color-white;
           transition-delay: 0s, $duration;
         }
       }
     }
 
     &::before {
-      top: -9px;
+      top: -($height / 4);
 
       @if ($active-class) {
         transition-property: top, transform, background-color;
@@ -63,7 +62,7 @@
     }
 
     &::after {
-      bottom: -9px;
+      bottom: -($height / 4);
 
       @if ($active-class) {
         transition-property: bottom, transform, background-color;

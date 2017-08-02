@@ -1,0 +1,13 @@
+//
+// Mixins - Utils / Avatar
+// -----------------------------------------------------------------------------
+
+@mixin u-avatar($size, $rounded: true) {
+  display: block;
+  height: $size;
+  width: auto;
+
+  @if ($rounded) {
+    border-radius: 50%;
+  }
+}
