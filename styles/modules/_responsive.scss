@@ -9,7 +9,7 @@ $display-values: (
   inline-block
 );
 
-@each $breakpoint, $values in $breakpoints {
+@each $breakpoint, $opts in $grid-breakpoints {
   @each $value in $display-values {
     .visible-#{$breakpoint}-#{$value} {
       display: none !important;

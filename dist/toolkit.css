@@ -458,3 +458,143 @@
         order: 1;
   }
 }
+
+.visible-xs-block {
+  display: none !important;
+}
+
+.visible-xs-flex {
+  display: none !important;
+}
+
+.visible-xs-inline {
+  display: none !important;
+}
+
+.visible-xs-inline-block {
+  display: none !important;
+}
+
+@media (min-width: 0) {
+  .visible-xs-block {
+    display: block !important;
+  }
+  .visible-xs-flex {
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  .visible-xs-inline {
+    display: inline !important;
+  }
+  .visible-xs-inline-block {
+    display: inline-block !important;
+  }
+  .hidden-xs {
+    display: none !important;
+  }
+}
+
+.visible-sm-block {
+  display: none !important;
+}
+
+.visible-sm-flex {
+  display: none !important;
+}
+
+.visible-sm-inline {
+  display: none !important;
+}
+
+.visible-sm-inline-block {
+  display: none !important;
+}
+
+@media (min-width: 480px) {
+  .visible-sm-block {
+    display: block !important;
+  }
+  .visible-sm-flex {
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  .visible-sm-inline {
+    display: inline !important;
+  }
+  .visible-sm-inline-block {
+    display: inline-block !important;
+  }
+  .hidden-sm {
+    display: none !important;
+  }
+}
+
+.visible-md-block {
+  display: none !important;
+}
+
+.visible-md-flex {
+  display: none !important;
+}
+
+.visible-md-inline {
+  display: none !important;
+}
+
+.visible-md-inline-block {
+  display: none !important;
+}
+
+@media (min-width: 680px) {
+  .visible-md-block {
+    display: block !important;
+  }
+  .visible-md-flex {
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  .visible-md-inline {
+    display: inline !important;
+  }
+  .visible-md-inline-block {
+    display: inline-block !important;
+  }
+  .hidden-md {
+    display: none !important;
+  }
+}
+
+.visible-lg-block {
+  display: none !important;
+}
+
+.visible-lg-flex {
+  display: none !important;
+}
+
+.visible-lg-inline {
+  display: none !important;
+}
+
+.visible-lg-inline-block {
+  display: none !important;
+}
+
+@media (min-width: 1040px) {
+  .visible-lg-block {
+    display: block !important;
+  }
+  .visible-lg-flex {
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  .visible-lg-inline {
+    display: inline !important;
+  }
+  .visible-lg-inline-block {
+    display: inline-block !important;
+  }
+  .hidden-lg {
+    display: none !important;
+  }
+}

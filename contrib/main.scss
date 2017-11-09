@@ -133,5 +133,5 @@ h1 {
 
 // Utils
 .u-hamburger {
-  @include hamburger(4rem, 3.5rem, 2px, #333333, 0.25s);
+  @include u-hamburger(4rem, 3.5rem, 2px, #333333, 0.25s);
 }
