@@ -1,7 +1,7 @@
 {
   "name": "bespoke-toolkit",
   "description": "A lightweight, semantic set of CSS utilities",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "license": "MIT",
   "keywords": [
     "grid",
