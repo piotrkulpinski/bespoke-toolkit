@@ -2,7 +2,7 @@
 // Mixins - Utils / Hamburger
 // -----------------------------------------------------------------------------
 
-@mixin u-hamburger($width, $height, $weight, $color, $duration: 0, $active-class: '') {
+@mixin u-hamburger($width, $height, $weight, $color, $duration: 0.25, $active-class: '') {
   display: block;
   position: relative;
   width: $width;

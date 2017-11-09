@@ -1,0 +1,30 @@
+//
+// Module - Responsive
+// -----------------------------------------------------------------------------
+
+$display-values: (
+  block,
+  flex,
+  inline,
+  inline-block
+);
+
+@each $breakpoint, $values in $breakpoints {
+  @each $value in $display-values {
+    .visible-#{$breakpoint}-#{$value} {
+      display: none !important;
+    }
+  }
+
+  @include breakpoint($breakpoint) {
+    @each $value in $display-values {
+      .visible-#{$breakpoint}-#{$value} {
+        display: #{$value} !important;
+      }
+    }
+
+    .hidden-#{$breakpoint} {
+      display: none !important;
+    }
+  }
+}

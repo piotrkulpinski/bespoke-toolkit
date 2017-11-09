@@ -1,0 +1,11 @@
+//
+// Mixins - Utils / Overlay
+// -----------------------------------------------------------------------------
+
+@mixin u-overlay($offset: 0, $position: 'absolute') {
+  position: unquote($position);
+  top: $offset;
+  bottom: $offset;
+  left: $offset;
+  right: $offset;
+}

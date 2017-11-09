@@ -4,10 +4,14 @@
 
 @mixin u-avatar($size, $rounded: true) {
   display: block;
-  height: $size;
+  height: $size * 3 / 4;
   width: auto;
 
   @if ($rounded) {
     border-radius: 50%;
+  }
+
+  @include breakpoint(md) {
+    height: $size;
   }
 }

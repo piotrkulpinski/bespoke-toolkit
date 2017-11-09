@@ -1,0 +1,24 @@
+//
+// Mixins - Utils / Cover
+// -----------------------------------------------------------------------------
+
+@mixin u-cover($lightness: 0.1, $color: #000000, $duration: 0.25s) {
+  position: relative;
+  background-color: rgba($color, 0.8);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  overflow: hidden;
+
+  &::after {
+    @include u-overlay;
+    content: '';
+    background-color: rgba($color, $lightness);
+    transition: background-color $duration;
+  }
+
+  &[href]:hover::after {
+    background-color: rgba($color, $lightness + 0.1);
+  }
+}

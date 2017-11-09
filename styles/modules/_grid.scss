@@ -11,6 +11,7 @@
 .container {
   margin-right: auto;
   margin-left: auto;
+  width: 100%;
 
   @each $breakpoint, $opts in $grid-breakpoints {
     @include breakpoint($breakpoint) {

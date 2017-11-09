@@ -2,6 +2,18 @@
 // Mixins - General
 // -----------------------------------------------------------------------------
 
+
+/// Clears all floated elements inside
+
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+
 /// Manages responsive breakpoints
 ///
 /// @param {String}     $label - Breakpoint label

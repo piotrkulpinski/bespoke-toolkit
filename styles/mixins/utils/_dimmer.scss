@@ -1,0 +1,44 @@
+//
+// Mixins - Utils / Dimmer
+// -----------------------------------------------------------------------------
+
+@mixin u-dimmer($position, $size, $lightness: 0.5, $color: #000000) {
+  &::before {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+
+    background: linear-gradient(to unquote($position),
+      rgba(transparent, 0) 0%,
+      rgba($color, $lightness / 5) 25%,
+      rgba($color, $lightness) 100%);
+
+    @if ($position == 'top') {
+      top: 0;
+      left: 0;
+      right: 0;
+      height: $size;
+    }
+
+    @if ($position == 'bottom') {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: $size;
+    }
+
+    @if ($position == 'left') {
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: $size;
+    }
+
+    @if ($position == 'right') {
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: $size;
+    }
+  }
+}
