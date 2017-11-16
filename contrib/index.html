@@ -10,7 +10,14 @@
 
     <div class="container">
       <h1>Utilities</h1>
-      <button class="u-hamburger"><span></span></button>
+      <button class="u-hamburger" data-toggle><span></span></button>
+
+      <script>
+        document.querySelector('[data-toggle]').addEventListener('click', function (ev) {
+          ev.preventDefault();
+          document.body.classList.toggle('has-nav-open');
+        });
+      </script>
 
       <h1>Grid</h1>
 

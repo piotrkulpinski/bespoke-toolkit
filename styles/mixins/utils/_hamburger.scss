@@ -2,12 +2,16 @@
 // Mixins - Utils / Hamburger
 // -----------------------------------------------------------------------------
 
-@mixin u-hamburger($width, $height, $weight, $color, $duration: 0.25, $active-class: '') {
+@mixin u-hamburger($width, $height, $weight, $color, $duration: 0.25s, $active-class: 'has-nav-open') {
   display: block;
   position: relative;
   width: $width;
   height: $height;
   cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
 
   > * {
     position: absolute;
@@ -20,8 +24,8 @@
     transform: translate3d(-50%, -50%, 0);
 
     @if ($active-class) {
-      transition-property: background-color;
-      transition-delay: $duration;
+      // Delay and transition instantly
+      transition: background-color 0s $duration;
 
       .#{$active-class} & {
         background-color: transparent;
@@ -39,11 +43,17 @@
       background-color: $color;
 
       @if ($active-class) {
-        transition-delay: $duration, 0s, 0s;
-        transition-duration: $duration, $duration, $duration;
+        transition: top $duration $duration,
+          bottom $duration $duration,
+          transform $duration 0s,
+          background-color $duration 0s;
 
         .#{$active-class} & {
-          transition-delay: 0s, $duration;
+          // Revert the delays
+          transition: top $duration 0s,
+            bottom $duration 0s,
+            transform $duration $duration,
+            background-color $duration $duration;
         }
       }
     }
@@ -52,8 +62,6 @@
       top: -($height / 4);
 
       @if ($active-class) {
-        transition-property: top, transform, background-color;
-
         .#{$active-class} & {
           top: 0;
           transform: rotate(45deg);
@@ -65,8 +73,6 @@
       bottom: -($height / 4);
 
       @if ($active-class) {
-        transition-property: bottom, transform, background-color;
-
         .#{$active-class} & {
           bottom: 0;
           transform: rotate(-45deg);
