@@ -24,8 +24,8 @@
     transform: translate3d(-50%, -50%, 0);
 
     @if ($active-class) {
-      // Delay and transition instantly
-      transition: background-color 0s $duration;
+      // Transition instantly
+      transition: background-color $duration;
 
       .#{$active-class} & {
         background-color: transparent;
