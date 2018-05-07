@@ -6,7 +6,8 @@ $display-values: (
   block,
   flex,
   inline,
-  inline-block
+  inline-block,
+  inline-flex
 );
 
 @each $breakpoint, $opts in $grid-breakpoints {

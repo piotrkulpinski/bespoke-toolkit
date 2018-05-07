@@ -1,0 +1,19 @@
+//
+// Mixins - Utils / Grid
+// -----------------------------------------------------------------------------
+
+@mixin u-grid($color: #4CFFFF, $opacity: 0.5) {
+  @include u-overlay(0, 'fixed');
+  z-index: 9999;
+  opacity: $opacity;
+  pointer-events: none;
+
+  * {
+    height: 100%;
+  }
+
+  .container,
+  .column {
+    outline: 1px solid $color;
+  }
+}
