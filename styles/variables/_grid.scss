@@ -12,7 +12,7 @@ $grid-container-gutter: 20px !default;
 ///
 /// @type Map
 
-$grid-breakpoints: if(variable-exists(breakpoints), $breakpoints, (
+$grid-breakpoints: (
   xs: (
     min-width: 0,
     container: 440px,
@@ -37,4 +37,4 @@ $grid-breakpoints: if(variable-exists(breakpoints), $breakpoints, (
     gutter: 30px,
     columns: 12
   )
-));
+) !default;

@@ -1,7 +1,7 @@
 {
   "name": "bespoke-toolkit",
-  "description": "A lightweight, semantic set of CSS utilities",
-  "version": "0.3.5",
+  "description": "A lightweight, semantic set of front-end utilities",
+  "version": "1.0.0",
   "license": "MIT",
   "keywords": [
     "grid",
@@ -28,15 +28,7 @@
     "url": "http://kulpinski.co"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.6",
-    "browser-sync": "^2.18.13",
-    "gulp": "^3.9.1",
-    "gulp-minify-css": "^1.2.4",
-    "gulp-plumber": "^1.1.0",
-    "gulp-postcss": "^7.0.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-scss-lint": "^0.5.0",
-    "node-sass": "^4.6.0"
+    "stylelint": "^9.2.1",
+    "stylelint-config-sass-guidelines": "^5.0.0"
   }
 }

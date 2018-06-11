@@ -20,9 +20,9 @@
 /// @param {Map}    $opts - Map containing breakpoint options
 
 @mixin grid-row-alignment($breakpoint, $opts) {
-  &_#{$breakpoint}-start  { justify-content: flex-start; }
-  &_#{$breakpoint}-center { justify-content: center; }
-  &_#{$breakpoint}-end    { justify-content: flex-end; }
+  &--#{$breakpoint}-start { justify-content: flex-start; }
+  &--#{$breakpoint}-center { justify-content: center; }
+  &--#{$breakpoint}-end { justify-content: flex-end; }
 }
 
 /// Generate semantic vertical alignment classes for grid row
@@ -31,7 +31,7 @@
 /// @param {Map}    $opts - Map containing breakpoint options
 
 @mixin grid-row-valignment($breakpoint, $opts) {
-  &_#{$breakpoint}-top    { align-items: flex-start; }
-  &_#{$breakpoint}-middle { align-items: center; }
-  &_#{$breakpoint}-bottom { align-items: flex-end; }
+  &--#{$breakpoint}-top { align-items: flex-start; }
+  &--#{$breakpoint}-middle { align-items: center; }
+  &--#{$breakpoint}-bottom { align-items: flex-end; }
 }

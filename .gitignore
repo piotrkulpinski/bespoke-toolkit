@@ -20,7 +20,6 @@ temp
 tmp
 .tmp
 node_modules
-contrib/*.css
 
 # Others
 npm-debug.log

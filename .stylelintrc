@@ -1,0 +1,11 @@
+{
+  "extends": "stylelint-config-sass-guidelines",
+  "rules": {
+    "color-hex-case": "upper",
+    "color-hex-length": "long",
+    "max-nesting-depth": 3,
+    "selector-class-pattern": "^(?:(?:a|o|c|u|t|s|is|has|_|js|qa)-)?[a-zA-Z0-9]+(?:-[a-zA-Z0-9\\@]+)*(?:__[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:--[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:\\[.+\\])?$",
+    "order/properties-alphabetical-order": null,
+    "scss/dollar-variable-colon-space-after": "at-least-one-space"
+  }
+}

@@ -25,7 +25,7 @@
   $gutter: map-get($opts, 'gutter');
 
   @for $i from 1 through $columns {
-    &_#{$breakpoint}-#{$i} {
+    &--#{$breakpoint}-#{$i} {
       width: calc(#{percentage($i / $columns)} - #{$gutter});
     }
   }
@@ -41,7 +41,7 @@
   $gutter: map-get($opts, 'gutter');
 
   @for $i from 0 through $columns {
-    &_#{$breakpoint}-offset-#{$i} {
+    &--#{$breakpoint}-offset-#{$i} {
       margin-left: calc(#{percentage($i / $columns)} + #{$gutter / 2});
     }
   }
@@ -53,9 +53,9 @@
 /// @param {Map}    $opts - Map containing breakpoint options
 
 @mixin grid-column-alignment($breakpoint, $opts) {
-  &_#{$breakpoint}-top    { align-self: flex-start; }
-  &_#{$breakpoint}-center { align-self: center; }
-  &_#{$breakpoint}-bottom { align-self: flex-end; }
+  &--#{$breakpoint}-top { align-self: flex-start; }
+  &--#{$breakpoint}-center { align-self: center; }
+  &--#{$breakpoint}-bottom { align-self: flex-end; }
 }
 
 /// Generate semantic ordering classes for grid column
@@ -64,6 +64,6 @@
 /// @param {Map}    $opts - Map containing breakpoint options
 
 @mixin grid-column-order($breakpoint, $opts) {
-  &_#{$breakpoint}-first { order: -1; }
-  &_#{$breakpoint}-last  { order: 1; }
+  &--#{$breakpoint}-first { order: -1; }
+  &--#{$breakpoint}-last { order: 1; }
 }

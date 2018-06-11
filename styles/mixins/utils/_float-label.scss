@@ -1,0 +1,44 @@
+//
+// Mixins - Utils / Float label
+// -----------------------------------------------------------------------------
+
+@mixin u-float-label($size: 75%, $opacity: 0.5, $duration: 0.25s) {
+  display: block;
+  position: relative;
+
+  > span {
+    position: absolute;
+    top: 0.15em;
+    left: 0;
+    font-size: $size;
+    line-height: normal;
+    cursor: text;
+    opacity: $opacity;
+    transition: all $duration;
+    @content;
+  }
+
+  :focus + span {
+    opacity: 1 - ((1 - $opacity) / 2);
+  }
+}
+
+@mixin u-float-label-input($duration: 0.25s) {
+  &::placeholder {
+    opacity: 1;
+    transition: all $duration;
+  }
+
+  &:placeholder-shown:not(:focus)::placeholder {
+    opacity: 0;
+  }
+}
+
+@mixin u-float-label-scaled {
+  &:placeholder-shown:not(:focus) + * {
+    font-size: 100%;
+    top: 1em;
+    opacity: 1;
+    @content;
+  }
+}
