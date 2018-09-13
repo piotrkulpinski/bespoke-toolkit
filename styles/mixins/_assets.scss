@@ -1,0 +1,37 @@
+//
+// Mixins - Assets
+// -----------------------------------------------------------------------------
+
+/*
+** Asset URL builder
+**
+** @param {String} $type - Asset type, matching folder name
+** @param {String} $file - Asset file name, including extension
+** @return {URL} - A `url()` function leading to the asset
+** @require {Variable} $base-path
+**/
+@function asset($type, $file) {
+  @return url($base-path + '/' + $type + '/' + $file);
+}
+
+/*
+** Image asset helper
+**
+** @param {String} $file - Asset file name, including extension
+** @return {URL} - A `url()` function leading to the image
+** @require {Function} asset
+**/
+@function image($file) {
+  @return asset('images', $file);
+}
+
+/*
+** Font asset helper
+**
+** @param {String} $file - Asset file name, including extension
+** @return {URL} - A `url()` function leading to the font
+** @require {Function} asset
+**/
+@function font($file) {
+  @return asset('fonts', $file);
+}

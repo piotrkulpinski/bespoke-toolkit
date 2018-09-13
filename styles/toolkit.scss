@@ -1,11 +1,18 @@
 /*!
 ** Name:      Bespoke Toolkit
-** Version:   v0.3.4
+** Version:   v1.0.2
 ** Author:    Piotr Kulpinski
-** Copyright: 2017
+** Copyright: 2018
 ** License:   MIT
 ** --------------------------------
 **/
+
+@import 'variables/grid';
+@import 'variables/utils';
+
+@import 'mixins/general';
+@import 'mixins/assets';
+@import 'mixins/colors';
 
 @import 'modules/grid';
 @import 'modules/utils';

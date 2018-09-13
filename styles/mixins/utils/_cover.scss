@@ -11,14 +11,17 @@
   text-align: center;
   overflow: hidden;
 
-  &::after {
-    @include u-overlay;
-    content: '';
-    background-color: rgba($color, $lightness);
-    transition: background-color $duration;
-  }
+  @if ($lightness > 0) {
+    &::after {
+      @include u-overlay;
+      content: '';
+      background-color: rgba($color, $lightness);
+      pointer-events: none;
+      transition: background-color $duration;
+    }
 
-  &[href]:hover::after {
-    background-color: rgba($color, $lightness + 0.1);
+    &[href]:hover::after {
+      background-color: rgba($color, $lightness + 0.1);
+    }
   }
 }

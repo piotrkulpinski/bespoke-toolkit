@@ -2,14 +2,6 @@
 // Module - Responsive
 // -----------------------------------------------------------------------------
 
-$display-values: (
-  block,
-  flex,
-  inline,
-  inline-block,
-  inline-flex
-);
-
 @each $breakpoint, $opts in $grid-breakpoints {
   @each $value in $display-values {
     .visible-#{$breakpoint}-#{$value} {

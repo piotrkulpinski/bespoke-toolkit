@@ -1,0 +1,21 @@
+//
+// Variables - Utils
+// -----------------------------------------------------------------------------
+
+/// Base path for assets
+///
+/// @type String
+
+$base-path: '..' !default;
+
+/// Sets the responsive classes display values
+///
+/// @type List
+
+$display-values: (
+  block,
+  flex,
+  inline,
+  inline-block,
+  inline-flex
+) !default;

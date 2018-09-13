@@ -13,28 +13,22 @@ $grid-container-gutter: 20px !default;
 /// @type Map
 
 $grid-breakpoints: (
-  xs: (
-    min-width: 0,
-    container: 440px,
-    gutter: 20px,
-    columns: 2
-  ),
   sm: (
-    min-width: 480px,
-    container: 440px,
-    gutter: 20px,
+    min-width: 0,
+    container: 450px,
+    gutter: 1.5em,
     columns: 4
   ),
   md: (
-    min-width: 680px,
-    container: 610px,
-    gutter: 30px,
+    min-width: calc(620px - (2 * 1.5em)),
+    container: 620px,
+    gutter: 1.5em,
     columns: 6
   ),
   lg: (
-    min-width: 1040px,
-    container: 980px,
-    gutter: 30px,
+    min-width: calc(1032px - (2 * 1.5em)),
+    container: 1032px,
+    gutter: 1.5em,
     columns: 12
   )
 ) !default;
