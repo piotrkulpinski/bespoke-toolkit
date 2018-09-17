@@ -35,3 +35,14 @@
 @function font($file) {
   @return asset('fonts', $file);
 }
+
+/*
+** Icon asset helper
+**
+** @param {String} $file - Asset file name, including extension
+** @return {URL} - A `url()` function leading to the icon
+** @require {Function} asset
+**/
+@function icon($file) {
+  @return asset('icons', $file);
+}
