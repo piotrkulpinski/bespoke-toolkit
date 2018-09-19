@@ -1,0 +1,24 @@
+//
+// Mixins - Utils / Object fit
+// -----------------------------------------------------------------------------
+
+@mixin u-object-fit($ratio: 56.25%) {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-bottom: $ratio;
+  }
+
+  img,
+  video,
+  iframe {
+    @include u-overlay;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+  }
+}
