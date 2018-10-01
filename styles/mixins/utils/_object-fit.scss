@@ -2,7 +2,7 @@
 // Mixins - Utils / Object fit
 // -----------------------------------------------------------------------------
 
-@mixin u-object-fit($ratio: 56.25%, $offset: 0, $fit: 'cover') {
+@mixin u-object-fit($ratio: 56.25%, $offset: 0px, $fit: 'cover') {
   position: relative;
   overflow: hidden;
 
