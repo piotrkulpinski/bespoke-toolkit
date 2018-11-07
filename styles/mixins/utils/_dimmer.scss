@@ -9,9 +9,9 @@
     pointer-events: none;
 
     background: linear-gradient(to unquote($position),
-    rgba(transparent, 0) 0%,
-    rgba($color, $lightness / 5) 25%,
-    rgba($color, $lightness) 100%);
+      rgba(transparent, 0) 0%,
+      rgba($color, $lightness / 5) 25%,
+      rgba($color, $lightness) 100%);
 
     @if ($position == 'top') {
       top: 0;

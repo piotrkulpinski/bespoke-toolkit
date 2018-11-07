@@ -9,4 +9,5 @@ A lightweight, semantic set of front-end utilities
 - Float Label
 - Grid
 - Hamburger
+- Object fit
 - Overlay

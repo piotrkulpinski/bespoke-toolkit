@@ -1,0 +1,91 @@
+//
+// Module - Spacers
+// -----------------------------------------------------------------------------
+
+@if length($spacers) > 1 {
+  @each $breakpoint, $opts in $grid-breakpoints {
+    @include breakpoint($breakpoint) {
+      @each $prop, $abbrev in (margin: m) {
+        @each $size, $length in $spacers {
+          .#{$abbrev}-#{$breakpoint}-#{$size} {
+            #{$prop}: $length !important;
+          }
+
+          .#{$abbrev}t-#{$breakpoint}-#{$size},
+          .#{$abbrev}y-#{$breakpoint}-#{$size} {
+            #{$prop}-top: $length !important;
+          }
+
+          .#{$abbrev}r-#{$breakpoint}-#{$size},
+          .#{$abbrev}x-#{$breakpoint}-#{$size} {
+            #{$prop}-right: $length !important;
+          }
+
+          .#{$abbrev}b-#{$breakpoint}-#{$size},
+          .#{$abbrev}y-#{$breakpoint}-#{$size} {
+            #{$prop}-bottom: $length !important;
+          }
+
+          .#{$abbrev}l-#{$breakpoint}-#{$size},
+          .#{$abbrev}x-#{$breakpoint}-#{$size} {
+            #{$prop}-left: $length !important;
+          }
+        }
+      }
+
+      // Negative margins (e.g., where `.mb-n1` is negative version of `.mb-1`)
+      @each $size, $length in $spacers {
+        @if $size != 0 {
+          .m-#{$breakpoint}-n#{$size} {
+            margin: -$length !important;
+          }
+
+          .mt-#{$breakpoint}-n#{$size},
+          .my-#{$breakpoint}-n#{$size} {
+            margin-top: -$length !important;
+          }
+
+          .mr-#{$breakpoint}-n#{$size},
+          .mx-#{$breakpoint}-n#{$size} {
+            margin-right: -$length !important;
+          }
+
+          .mb-#{$breakpoint}-n#{$size},
+          .my-#{$breakpoint}-n#{$size} {
+            margin-bottom: -$length !important;
+          }
+
+          .ml-#{$breakpoint}-n#{$size},
+          .mx-#{$breakpoint}-n#{$size} {
+            margin-left: -$length !important;
+          }
+        }
+      }
+
+      // Some special margin utils
+      .m-#{$breakpoint}-auto {
+        margin: auto !important;
+      }
+
+      .mt-#{$breakpoint}-auto,
+      .my-#{$breakpoint}-auto {
+        margin-top: auto !important;
+      }
+
+      .mr-#{$breakpoint}-auto,
+      .mx-#{$breakpoint}-auto {
+        margin-right: auto !important;
+      }
+
+      .mb-#{$breakpoint}-auto,
+      .my-#{$breakpoint}-auto {
+        margin-bottom: auto !important;
+      }
+
+      .ml-#{$breakpoint}-auto,
+      .mx-#{$breakpoint}-auto {
+        margin-left: auto !important;
+      }
+    }
+  }
+}

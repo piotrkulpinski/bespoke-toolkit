@@ -14,6 +14,7 @@
   margin-right: ($gutter / -2);
 }
 
+
 /// Generate semantic alignment classes for grid row
 ///
 /// @param {String} $breakpoint - Breakpoint name
@@ -24,6 +25,7 @@
   &--#{$breakpoint}-center { justify-content: center; }
   &--#{$breakpoint}-end { justify-content: flex-end; }
 }
+
 
 /// Generate semantic vertical alignment classes for grid row
 ///

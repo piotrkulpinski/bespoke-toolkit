@@ -2,22 +2,24 @@
 // Module - Responsive
 // -----------------------------------------------------------------------------
 
-@each $breakpoint, $opts in $grid-breakpoints {
-  @each $value in $display-values {
-    .visible-#{$breakpoint}-#{$value} {
-      display: none !important;
-    }
-  }
-
-  @include breakpoint($breakpoint) {
+@if length($display-values) > 1 {
+  @each $breakpoint, $opts in $grid-breakpoints {
     @each $value in $display-values {
       .visible-#{$breakpoint}-#{$value} {
-        display: #{$value} !important;
+        display: none !important;
       }
     }
 
-    .hidden-#{$breakpoint} {
-      display: none !important;
+    @include breakpoint($breakpoint) {
+      @each $value in $display-values {
+        .visible-#{$breakpoint}-#{$value} {
+          display: #{$value} !important;
+        }
+      }
+
+      .hidden-#{$breakpoint} {
+        display: none !important;
+      }
     }
   }
 }
