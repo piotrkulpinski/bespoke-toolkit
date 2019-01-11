@@ -5,7 +5,7 @@
 @mixin u-avatar($size, $rounded: true) {
   display: block;
   height: $size * 3 / 4;
-  width: auto;
+  width: $size * 3 / 4;
 
   @if ($rounded) {
     border-radius: 50%;
@@ -13,5 +13,6 @@
 
   @include breakpoint(md) {
     height: $size;
+    width: $size;
   }
 }
