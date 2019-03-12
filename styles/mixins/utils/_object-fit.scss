@@ -2,7 +2,7 @@
 // Mixins - Utils / Object fit
 // -----------------------------------------------------------------------------
 
-@mixin u-object-fit($ratio: 56.25%, $offset: 0px, $fit: 'cover') {
+@mixin u-object-fit($ratio: 56.25%, $fit: 'cover') {
   position: relative;
   overflow: hidden;
 
@@ -16,9 +16,9 @@
   svg,
   video,
   iframe {
-    @include u-overlay($offset);
-    height: calc(100% - #{$offset * 2});
-    width: calc(100% - #{$offset * 2});
+    @include u-overlay;
+    height: 100%;
+    width: 100%;
     object-fit: unquote($fit);
     font-family: 'object-fit: #{unquote($fit)};';
   }
