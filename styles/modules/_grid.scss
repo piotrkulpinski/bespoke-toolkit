@@ -28,6 +28,7 @@
       @include grid-row($breakpoint, $opts);
       @include grid-row-alignment($breakpoint, $opts);
       @include grid-row-valignment($breakpoint, $opts);
+      @include grid-row-order($breakpoint, $opts);
     }
   }
 }
