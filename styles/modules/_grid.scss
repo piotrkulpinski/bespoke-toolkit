@@ -6,46 +6,70 @@
 @import '../mixins/grid/row';
 @import '../mixins/grid/column';
 
-.container {
-  margin-right: auto;
-  margin-left: auto;
-  width: 100%;
+@if ($grid-breakpoints) {
+  .container {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
 
-  @each $breakpoint, $opts in $grid-breakpoints {
-    @include breakpoint($breakpoint) {
-      @include grid-container($breakpoint, $opts);
-      @include grid-container-adaptive($breakpoint, $opts);
-    }
-  }
-}
+    @each $breakpoint, $opts in $grid-breakpoints {
+      @include breakpoint($breakpoint) {
+        @if (map-get($opts, 'container')) {
+          $container: map-get($opts, 'container');
+          $container-gutter: map-get($opts, 'container-gutter');
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
+          @if (length($container) > 1) {
+            @each $size, $value in $container {
+              &--#{$size} {
+                @include grid-container($container-gutter);
+                @include grid-container-adaptive($value, $container-gutter);
+              }
+            }
+          }
 
-  @each $breakpoint, $opts in $grid-breakpoints {
-    @include breakpoint($breakpoint) {
-      @include grid-row($breakpoint, $opts);
-      @include grid-row-alignment($breakpoint, $opts);
-      @include grid-row-valignment($breakpoint, $opts);
-      @include grid-row-order($breakpoint, $opts);
-    }
-  }
-}
-
-.column {
-  @each $breakpoint, $opts in $grid-breakpoints {
-    @include breakpoint($breakpoint) {
-      @include grid-column($breakpoint, $opts);
+          @else {
+            @include grid-container($container-gutter);
+            @include grid-container-adaptive($container, $container-gutter);
+          }
+        }
+      }
     }
   }
 
-  @each $breakpoint, $opts in $grid-breakpoints {
-    @include breakpoint($breakpoint) {
-      @include grid-column-width($breakpoint, $opts);
-      @include grid-column-offset($breakpoint, $opts);
-      @include grid-column-alignment($breakpoint, $opts);
-      @include grid-column-order($breakpoint, $opts);
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+
+    @each $breakpoint, $opts in $grid-breakpoints {
+      @include breakpoint($breakpoint) {
+        @if (map-get($opts, 'columns')) {
+          @include grid-row($breakpoint, $opts);
+          @include grid-row-alignment($breakpoint, $opts);
+          @include grid-row-valignment($breakpoint, $opts);
+          @include grid-row-order($breakpoint, $opts);
+        }
+      }
+    }
+  }
+
+  .column {
+    @each $breakpoint, $opts in $grid-breakpoints {
+      @include breakpoint($breakpoint) {
+        @if (map-get($opts, 'columns')) {
+          @include grid-column($breakpoint, $opts);
+        }
+      }
+    }
+
+    @each $breakpoint, $opts in $grid-breakpoints {
+      @include breakpoint($breakpoint) {
+        @if (map-get($opts, 'columns')) {
+          @include grid-column-width($breakpoint, $opts);
+          @include grid-column-offset($breakpoint, $opts);
+          @include grid-column-alignment($breakpoint, $opts);
+          @include grid-column-order($breakpoint, $opts);
+        }
+      }
     }
   }
 }

@@ -1,35 +1,3 @@
 //
 // Variables - Grid
 // -----------------------------------------------------------------------------
-
-/// Sets the grid container side gutters
-///
-/// @type Number (pixels)
-
-$grid-container-gutter: 1.5em !default;
-
-
-/// Sets the main responsive breakpoint declarations
-///
-/// @type Map
-
-$grid-breakpoints: (
-  sm: (
-    min-width: 0,
-    container: 450px,
-    gutter: 1.5em,
-    columns: 4
-  ),
-  md: (
-    min-width: calc(620px - (2 * 1.5em)),
-    container: 620px,
-    gutter: 1.5em,
-    columns: 6
-  ),
-  lg: (
-    min-width: calc(1032px - (2 * 1.5em)),
-    container: 1032px,
-    gutter: 1.5em,
-    columns: 12
-  )
-) !default;
