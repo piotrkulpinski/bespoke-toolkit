@@ -2,8 +2,8 @@
 // Mixins - Utils / Dimmer
 // -----------------------------------------------------------------------------
 
-@mixin u-dimmer($position, $size, $lightness: 0.5, $color: #000000) {
-  &::before {
+@mixin u-dimmer($position, $size, $lightness: 0.5, $color: #000000, $element: 'before') {
+  &::#{$element} {
     content: '';
     position: absolute;
     pointer-events: none;
