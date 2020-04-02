@@ -7,14 +7,5 @@
 ** --------------------------------
 **/
 
-@import 'variables/grid';
-@import 'variables/utils';
-
-@import 'mixins/general';
-@import 'mixins/assets';
-@import 'mixins/colors';
-
-@import 'modules/grid';
-@import 'modules/spacers';
-@import 'modules/mixins';
-@import 'modules/responsive';
+@import 'mixins';
+@import 'modules';
