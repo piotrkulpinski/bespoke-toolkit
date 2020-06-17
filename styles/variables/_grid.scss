@@ -1,3 +1,37 @@
 //
 // Variables - Grid
 // -----------------------------------------------------------------------------
+
+/// Display grid row alignment classes
+///
+/// @type boolean
+
+$display-grid-row-alignment: true !default;
+
+
+/// Display grid row valignment classes
+///
+/// @type boolean
+
+$display-grid-row-valignment: true !default;
+
+
+/// Display grid row order classes
+///
+/// @type boolean
+
+$display-grid-row-order: true !default;
+
+
+/// Display grid column alignment classes
+///
+/// @type boolean
+
+$display-grid-column-alignment: true !default;
+
+
+/// Display grid column order classes
+///
+/// @type boolean
+
+$display-grid-column-order: true !default;

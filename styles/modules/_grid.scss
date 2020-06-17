@@ -44,9 +44,18 @@
       @include breakpoint($breakpoint) {
         @if (map-get($opts, 'columns')) {
           @include grid-row($breakpoint, $opts);
-          @include grid-row-alignment($breakpoint, $opts);
-          @include grid-row-valignment($breakpoint, $opts);
-          @include grid-row-order($breakpoint, $opts);
+
+          @if ($display-grid-row-alignment) {
+            @include grid-row-alignment($breakpoint, $opts);
+          }
+
+          @if ($display-grid-row-valignment) {
+            @include grid-row-valignment($breakpoint, $opts);
+          }
+
+          @if ($display-grid-row-order) {
+            @include grid-row-order($breakpoint, $opts);
+          }
         }
       }
     }
@@ -57,17 +66,16 @@
       @include breakpoint($breakpoint) {
         @if (map-get($opts, 'columns')) {
           @include grid-column($breakpoint, $opts);
-        }
-      }
-    }
-
-    @each $breakpoint, $opts in $grid-breakpoints {
-      @include breakpoint($breakpoint) {
-        @if (map-get($opts, 'columns')) {
           @include grid-column-width($breakpoint, $opts);
           @include grid-column-offset($breakpoint, $opts);
-          @include grid-column-alignment($breakpoint, $opts);
-          @include grid-column-order($breakpoint, $opts);
+
+          @if ($display-grid-column-alignment) {
+            @include grid-column-alignment($breakpoint, $opts);
+          }
+
+          @if ($display-grid-column-order) {
+            @include grid-column-order($breakpoint, $opts);
+          }
         }
       }
     }

@@ -4,10 +4,8 @@
 
 @if length($display-values) > 1 {
   @each $breakpoint, $opts in $grid-breakpoints {
-    @each $value in $display-values {
-      .visible-#{$breakpoint}-#{$value} {
-        display: none !important;
-      }
+    #{join-values('.visible-#{$breakpoint}', $display-values)} {
+      display: none !important;
     }
 
     @include breakpoint($breakpoint) {
