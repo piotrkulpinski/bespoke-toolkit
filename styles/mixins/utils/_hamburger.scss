@@ -2,7 +2,7 @@
 // Mixins - Utils / Hamburger
 // -----------------------------------------------------------------------------
 
-@mixin u-hamburger($width, $height, $weight, $color: currentColor, $duration: 0.25s, $active-class: 'has-nav-open') {
+@mixin u-hamburger($width, $height, $weight, $color: currentColor, $duration: 0.25s, $active-class: 'has-nav-open', $radius: 0px) {
   display: block;
   position: relative;
   width: $width;
@@ -21,6 +21,7 @@
     display: block;
     height: $weight;
     background-color: $color;
+    border-radius: $radius;
     transform: translate3d(-50%, -50%, 0);
 
     @if ($active-class) {
@@ -41,6 +42,7 @@
       width: 100%;
       height: 100%;
       background-color: $color;
+      border-radius: $radius;
 
       @if ($active-class) {
         transition: top $duration $duration,
