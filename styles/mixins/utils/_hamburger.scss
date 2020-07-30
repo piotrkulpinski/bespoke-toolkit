@@ -3,7 +3,9 @@
 // -----------------------------------------------------------------------------
 
 @mixin u-hamburger($width, $height, $weight, $color: currentColor, $duration: 0.25s, $active-class: 'has-nav-open', $radius: 0px) {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   width: $width;
   height: $height;
@@ -14,15 +16,12 @@
   }
 
   > * {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 65%;
+    position: relative;
+    width: 100%;
     display: block;
     height: $weight;
     background-color: $color;
     border-radius: $radius;
-    transform: translate3d(-50%, -50%, 0);
 
     @if ($active-class) {
       // Transition instantly
@@ -37,7 +36,6 @@
     &::after {
       content: '';
       position: absolute;
-      left: 0;
       display: block;
       width: 100%;
       height: 100%;
@@ -47,6 +45,7 @@
       @if ($active-class) {
         transition: top $duration $duration,
           bottom $duration $duration,
+          width $duration $duration,
           transform $duration 0s,
           background-color $duration 0s;
 
@@ -54,6 +53,7 @@
           // Revert the delays
           transition: top $duration 0s,
             bottom $duration 0s,
+            width $duration 0s,
             transform $duration $duration,
             background-color $duration $duration;
         }
@@ -61,7 +61,7 @@
     }
 
     &::before {
-      top: -($height / 4);
+      top: calc((#{($height / 2)} - #{$weight / 2}) * -1);
 
       @if ($active-class) {
         .#{$active-class} & {
@@ -72,7 +72,7 @@
     }
 
     &::after {
-      bottom: -($height / 4);
+      bottom: calc((#{($height / 2)} - #{$weight / 2}) * -1);
 
       @if ($active-class) {
         .#{$active-class} & {
