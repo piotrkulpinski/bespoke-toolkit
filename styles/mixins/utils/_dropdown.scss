@@ -2,7 +2,7 @@
 // Mixins - Utils / Dropdown
 // -----------------------------------------------------------------------------
 
-@mixin u-dropdown($duration: 0.25) {
+@mixin u-dropdown($duration: 0.25s) {
   position: absolute;
   top: 100%;
   left: 50%;
@@ -19,15 +19,17 @@
   }
 }
 
-@mixin u-dropdown-trigger($caret-size: 0.5rem) {
+@mixin u-dropdown-trigger($caret-size: 0.5rem, $spacing: false) {
   position: relative;
 
   > a,
   > button {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    margin-top: -0.5em;
-    margin-bottom: -0.5em;
+    @if ($spacing) {
+      padding-top: #{$spacing};
+      padding-bottom: #{$spacing};
+      margin-top: -#{$spacing};
+      margin-bottom: -#{$spacing};
+    }
 
     &::after {
       content: '';
