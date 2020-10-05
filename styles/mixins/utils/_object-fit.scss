@@ -12,14 +12,13 @@
     padding-bottom: $ratio;
   }
 
-  img,
-  svg,
-  video,
-  iframe {
+  > img,
+  > svg,
+  > video,
+  > iframe {
     @include u-overlay($offset);
     height: calc(100% - #{$offset * 2});
     width: calc(100% - #{$offset * 2});
     object-fit: unquote($fit);
-    font-family: 'object-fit: #{unquote($fit)};';
   }
 }
