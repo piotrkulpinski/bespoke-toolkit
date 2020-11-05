@@ -8,7 +8,7 @@
 /// @param {Map}    $opts - Map containing breakpoint options
 
 @mixin grid-column($breakpoint, $opts) {
-  $gutter: map-get($opts, 'gutter');
+  $gutter: map-get($opts, 'column-gutter');
 
   width: calc(100% - #{$gutter});
   margin-left: ($gutter / 2);
@@ -23,7 +23,7 @@
 
 @mixin grid-column-width($breakpoint, $opts) {
   $columns: map-get($opts, 'columns');
-  $gutter: map-get($opts, 'gutter');
+  $gutter: map-get($opts, 'column-gutter');
 
   @for $i from 1 through $columns {
     &--#{$breakpoint}-#{$i} {
@@ -40,7 +40,7 @@
 
 @mixin grid-column-offset($breakpoint, $opts) {
   $columns: map-get($opts, 'columns');
-  $gutter: map-get($opts, 'gutter');
+  $gutter: map-get($opts, 'column-gutter');
 
   @for $i from 0 through $columns {
     &--#{$breakpoint}-offset-#{$i} {
