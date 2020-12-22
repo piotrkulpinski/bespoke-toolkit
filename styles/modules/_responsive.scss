@@ -2,7 +2,7 @@
 // Module - Responsive
 // -----------------------------------------------------------------------------
 
-@if length($display-values) > 1 {
+@if length($display-values) > 1 and length($grid-breakpoints) > 1 {
   @each $breakpoint, $opts in $grid-breakpoints {
     #{join-values('.visible-#{$breakpoint}', $display-values)} {
       display: none !important;

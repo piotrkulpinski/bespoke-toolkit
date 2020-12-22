@@ -1,0 +1,41 @@
+//
+// Mixins - General
+// -----------------------------------------------------------------------------
+
+/// Manages responsive breakpoints
+///
+/// @param {String}     $name - Breakpoint name
+/// @require {Variable} $grid-breakpoints
+
+
+@mixin breakpoint($name) {
+  @if length($grid-breakpoints) > 1 {
+    $breakpoint: map-get($grid-breakpoints, $name);
+
+    @if $breakpoint {
+      @media (min-width: map-get($breakpoint, 'min-width')) {
+        @content;
+      }
+    }
+
+    @else {
+      @warn 'Unfortunately, no value could be retrieved from `#{$name}`.'
+        + 'Available breakpoints are: #{map-keys($grid-breakpoints)}.';
+    }
+  }
+
+  @else {
+    @warn 'Unfortunately, no breakpoints are defined.';
+  }
+}
+
+
+/// Breakpoint mixin alias
+///
+/// @param {String}     $name - Breakpoint name
+/// @require {Variable} $grid-breakpoints
+
+
+@mixin bp($name) {
+  @include breakpoint($name);
+}

@@ -2,7 +2,7 @@
 // Module - Spacers
 // -----------------------------------------------------------------------------
 
-@if length($spacers) > 1 {
+@if length($spacers) > 1 and length($grid-breakpoints) > 1 {
   @each $breakpoint, $opts in $grid-breakpoints {
     @include breakpoint($breakpoint) {
       @each $prop, $abbrev in (margin: m) {

@@ -9,27 +9,22 @@
 $base-path: '..' !default;
 
 
+/// Sets grid containers and responsive mixins
+///
+/// @type List
+
+$grid-breakpoints: () !default;
+
+
 /// Sets the responsive classes display values
 ///
 /// @type List
 
-$display-values: (
-  block,
-  flex,
-  inline,
-  inline-block,
-  inline-flex
-) !default;
+$display-values: () !default;
 
 
 /// Sets the spacer values
 ///
 /// @type List
 
-$spacers: (
-  0: 0,
-  1: 1em,
-  2: 2em,
-  3: 3em,
-  4: 4em
-) !default;
+$spacers: () !default;

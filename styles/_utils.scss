@@ -1,0 +1,18 @@
+//
+// Utils
+// -----------------------------------------------------------------------------
+
+/// Join property selectors together
+///
+/// @param {String}     $prefix - Selector prefix
+/// @require {List}     $values - list of values to join
+
+@function join-values($prefix, $values) {
+  $output: '';
+
+  @each $value in $values {
+    $output: '#{if($output != '', '#{$output}, ', $output)}#{$prefix}-#{$value}';
+  }
+
+  @return $output;
+}

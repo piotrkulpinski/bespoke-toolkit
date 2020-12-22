@@ -6,7 +6,7 @@
 @import '../mixins/grid/row';
 @import '../mixins/grid/column';
 
-@if ($grid-breakpoints) {
+@if length($grid-breakpoints) > 1 {
   .container {
     margin-right: auto;
     margin-left: auto;
@@ -45,15 +45,15 @@
         @if (map-get($opts, 'columns')) {
           @include grid-row($breakpoint, $opts);
 
-          @if ($display-grid-row-alignment) {
+          @if variable-exists(display-grid-row-alignment) {
             @include grid-row-alignment($breakpoint, $opts);
           }
 
-          @if ($display-grid-row-valignment) {
+          @if variable-exists(display-grid-row-valignment) {
             @include grid-row-valignment($breakpoint, $opts);
           }
 
-          @if ($display-grid-row-order) {
+          @if variable-exists(display-grid-row-order) {
             @include grid-row-order($breakpoint, $opts);
           }
         }
@@ -69,11 +69,11 @@
           @include grid-column-width($breakpoint, $opts);
           @include grid-column-offset($breakpoint, $opts);
 
-          @if ($display-grid-column-alignment) {
+          @if variable-exists(display-grid-column-alignment) {
             @include grid-column-alignment($breakpoint, $opts);
           }
 
-          @if ($display-grid-column-order) {
+          @if variable-exists(display-grid-column-order) {
             @include grid-column-order($breakpoint, $opts);
           }
         }
