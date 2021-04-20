@@ -2,17 +2,13 @@
 // Mixins - Grid / Column
 // -----------------------------------------------------------------------------
 
-/// Generate semantic classes for grid column
+/// Generate semantic classes for grid column gutter
 ///
 /// @param {String} $breakpoint - Breakpoint name
 /// @param {Map}    $opts - Map containing breakpoint options
 
-@mixin grid-column($breakpoint, $opts) {
-  $gutter: map-get($opts, 'column-gutter');
-
-  width: calc(100% - #{$gutter});
-  margin-left: ($gutter / 2);
-  margin-right: ($gutter / 2);
+@mixin grid-column-gutter($breakpoint, $opts) {
+  --column-gutter: #{map-get($opts, 'column-gutter')};
 }
 
 
@@ -23,11 +19,10 @@
 
 @mixin grid-column-width($breakpoint, $opts) {
   $columns: map-get($opts, 'columns');
-  $gutter: map-get($opts, 'column-gutter');
 
   @for $i from 1 through $columns {
     &--#{$breakpoint}-#{$i} {
-      width: calc(#{percentage($i / $columns)} - #{$gutter});
+      width: calc(#{percentage($i / $columns)} - var(--column-gutter));
     }
   }
 }
@@ -40,11 +35,10 @@
 
 @mixin grid-column-offset($breakpoint, $opts) {
   $columns: map-get($opts, 'columns');
-  $gutter: map-get($opts, 'column-gutter');
 
   @for $i from 0 through $columns {
     &--#{$breakpoint}-offset-#{$i} {
-      margin-left: calc(#{percentage($i / $columns)} + #{$gutter / 2});
+      margin-left: calc(#{percentage($i / $columns)} + (var(--column-gutter) / 2));
     }
   }
 }

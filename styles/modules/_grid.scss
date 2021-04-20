@@ -62,10 +62,14 @@
   }
 
   .column {
+    width: calc(100% - var(--column-gutter));
+    margin-left: calc(var(--column-gutter) / 2);
+    margin-right: calc(var(--column-gutter) / 2);
+
     @each $breakpoint, $opts in $grid-breakpoints {
       @include breakpoint($breakpoint) {
         @if (map-get($opts, 'columns')) {
-          @include grid-column($breakpoint, $opts);
+          @include grid-column-gutter($breakpoint, $opts);
           @include grid-column-width($breakpoint, $opts);
           @include grid-column-offset($breakpoint, $opts);
 
