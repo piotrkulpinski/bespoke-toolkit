@@ -28,7 +28,7 @@
     "url": "https://kulpinski.co"
   },
   "devDependencies": {
-    "stylelint": "^13.2.1",
-    "stylelint-config-sass-guidelines": "^7.0.0"
+    "stylelint": "^13.13.1",
+    "stylelint-config-sass-guidelines": "^7.1.0"
   }
 }
