@@ -10,8 +10,8 @@
 @mixin grid-row($breakpoint, $opts) {
   $gutter: map-get($opts, 'column-gutter');
 
-  margin-left: ($gutter * -0.5);
-  margin-right: ($gutter * -0.5);
+  margin-left: (($gutter * 0.5) * -1);
+  margin-right: (($gutter * 0.5) * -1);
 }
 
 
