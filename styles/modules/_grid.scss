@@ -63,8 +63,8 @@
 
   .column {
     width: calc(100% - var(--column-gutter));
-    margin-left: calc(var(--column-gutter) / 2);
-    margin-right: calc(var(--column-gutter) / 2);
+    margin-left: calc(var(--column-gutter) * 0.5);
+    margin-right: calc(var(--column-gutter) * 0.5);
 
     @each $breakpoint, $opts in $grid-breakpoints {
       @include breakpoint($breakpoint) {

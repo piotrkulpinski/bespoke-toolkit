@@ -19,7 +19,7 @@
   }
 
   :focus + span {
-    opacity: 1 - ((1 - $opacity) / 2);
+    opacity: 1 - ((1 - $opacity) * 0.5);
   }
 }
 

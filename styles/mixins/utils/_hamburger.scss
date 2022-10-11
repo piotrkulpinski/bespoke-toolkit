@@ -61,7 +61,7 @@
     }
 
     &::before {
-      top: calc((#{($height / 2)} - #{$weight / 2}) * -1);
+      top: calc((#{($height * 0.5)} - #{$weight * 0.5}) * -1);
 
       @if ($active-class) {
         .#{$active-class} & {
@@ -72,7 +72,7 @@
     }
 
     &::after {
-      bottom: calc((#{($height / 2)} - #{$weight / 2}) * -1);
+      bottom: calc((#{($height * 0.5)} - #{$weight * 0.5}) * -1);
 
       @if ($active-class) {
         .#{$active-class} & {

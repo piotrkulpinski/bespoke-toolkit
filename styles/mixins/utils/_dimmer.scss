@@ -10,7 +10,7 @@
 
     background: linear-gradient(to unquote($position),
       rgba(transparent, 0) 0%,
-      rgba($color, $lightness / 5) 25%,
+      rgba($color, $lightness * 0.2) 25%,
       rgba($color, $lightness) 100%);
 
     @if ($position == 'top') {

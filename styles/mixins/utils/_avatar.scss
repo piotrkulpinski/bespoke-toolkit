@@ -4,8 +4,8 @@
 
 @mixin u-avatar($size, $rounded: true) {
   display: block;
-  height: $size * 3 / 4;
-  width: $size * 3 / 4;
+  height: $size * 0.75;
+  width: $size * 0.75;
 
   @if ($rounded) {
     border-radius: 50%;
