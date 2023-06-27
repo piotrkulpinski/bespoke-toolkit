@@ -2,23 +2,23 @@
 // Module - Math
 // -----------------------------------------------------------------------------
 
-@use "sass:math";
-
 /// Power
 @function pow($number, $exponent) {
-  @if (round($exponent) != $exponent) {
+  @if (round($exponent) !=$exponent) {
     @return exp($exponent * ln($number));
   }
 
   $value: 1;
 
-  @if $exponent > 0 {
+  @if $exponent >0 {
     @for $i from 1 through $exponent {
-     $value: $value * $number;
+      $value: $value * $number;
     }
-  } @else if $exponent < 0 {
+  }
+
+  @else if $exponent < 0 {
     @for $i from 1 through -$exponent {
-      $value: math.div($value, $number);
+      $value: $value / $number;
     }
   }
 
@@ -29,7 +29,7 @@
 @function factorial($value) {
   $result: 1;
 
-  @if $value == 0 {
+  @if $value ==0 {
     @return $result;
   }
 
@@ -45,7 +45,7 @@
   $sum: 0;
 
   @for $index from $initial to $limit {
-    $sum: $sum + call($iteratee, $input, $index);
+    $sum: $sum +call($iteratee, $input, $index);
   }
 
   @return $sum;
@@ -53,7 +53,7 @@
 
 /// Maclaurin Expansion
 @function exp-maclaurin($x, $n) {
-  @return math.div(pow($x, $n), factorial($n));
+  @return pow($x, $n) / factorial($n);
 }
 
 /// Exponent
@@ -63,7 +63,7 @@
 
 /// Maclaurin logarithm
 @function ln-maclaurin($x, $n) {
-  @return math.div(pow(-1, $n + 1), $n) * (pow($x - 1, $n));
+  @return pow(-1, $n + 1) / $n * (pow($x - 1, $n));
 }
 
 /// Logarithm
@@ -72,15 +72,15 @@
   $ln-ten: 2.30258509;
 
   @while ($value > pow(10, $ten-exp)) {
-    $ten-exp: $ten-exp + 1;
+    $ten-exp: $ten-exp +1;
   }
 
-  @return summation(get-function('ln-maclaurin'), math.div($value, pow(10, $ten-exp)), 1, 100) + $ten-exp * $ln-ten;
+  @return summation(get-function('ln-maclaurin'), $value / pow(10, $ten-exp), 1, 100)+$ten-exp * $ln-ten;
 }
 
 /// Absolute value
 @function abs($number) {
-  @if $number >= 0 {
+  @if $number >=0 {
     @return $number;
   }
 
