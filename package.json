@@ -1,7 +1,7 @@
 {
   "name": "bespoke-toolkit",
   "description": "A lightweight, semantic set of front-end utilities",
-  "version": "1.0.27",
+  "version": "1.0.29",
   "license": "MIT",
   "keywords": [
     "grid",
