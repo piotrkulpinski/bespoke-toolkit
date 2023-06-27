@@ -24,7 +24,7 @@
 
   @for $i from 1 through $columns {
     &--#{$breakpoint}-#{$i} {
-      width: calc(#{percentage(math.div($i, $columns))} - var(--column-gutter));
+      width: calc(#{percentage($i, $columns)} - var(--column-gutter));
     }
   }
 }
@@ -40,7 +40,7 @@
 
   @for $i from 0 through $columns {
     &--#{$breakpoint}-offset-#{$i} {
-      margin-left: calc(#{percentage(math.div($i, $columns))} + (var(--column-gutter) * 0.5));
+      margin-left: calc(#{percentage($i, $columns)} + (var(--column-gutter) * 0.5));
     }
   }
 }
@@ -52,9 +52,17 @@
 /// @param {Map}    $opts - Map containing breakpoint options
 
 @mixin grid-column-alignment($breakpoint, $opts) {
-  &--#{$breakpoint}-top { align-self: flex-start; }
-  &--#{$breakpoint}-center { align-self: center; }
-  &--#{$breakpoint}-bottom { align-self: flex-end; }
+  &--#{$breakpoint}-top {
+    align-self: flex-start;
+  }
+
+  &--#{$breakpoint}-center {
+    align-self: center;
+  }
+
+  &--#{$breakpoint}-bottom {
+    align-self: flex-end;
+  }
 }
 
 
@@ -64,6 +72,11 @@
 /// @param {Map}    $opts - Map containing breakpoint options
 
 @mixin grid-column-order($breakpoint, $opts) {
-  &--#{$breakpoint}-first { order: -1; }
-  &--#{$breakpoint}-last { order: 1; }
+  &--#{$breakpoint}-first {
+    order: -1;
+  }
+
+  &--#{$breakpoint}-last {
+    order: 1;
+  }
 }
