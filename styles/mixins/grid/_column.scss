@@ -24,7 +24,7 @@
 
   @for $i from 1 through $columns {
     &--#{$breakpoint}-#{$i} {
-      width: calc(#{percentage($i / $columns)} - var(--column-gutter));
+      width: calc(#{percentage(math.div($i, $columns))} - var(--column-gutter));
     }
   }
 }
@@ -40,7 +40,7 @@
 
   @for $i from 0 through $columns {
     &--#{$breakpoint}-offset-#{$i} {
-      margin-left: calc(#{percentage($i / $columns)} + (var(--column-gutter) * 0.5));
+      margin-left: calc(#{percentage(math.div($i, $columns))} + (var(--column-gutter) * 0.5));
     }
   }
 }
